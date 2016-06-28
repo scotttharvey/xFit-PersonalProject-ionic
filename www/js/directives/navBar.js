@@ -5,11 +5,8 @@ angular.module("crossfit").directive("navBar", function(){
     scope: {
 
     },
-    controller: function($scope){
-
-    },
     link: function(scope, element, attrs){
-
+      
     }
 
   }

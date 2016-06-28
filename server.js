@@ -13,10 +13,9 @@ var Wod = require("./server/models/wod.js")
 var corsOptions = {
   origin: "http://localhost:8100"
 }
-mongoose.connect("mongodb://localhost/xFit")
-// app.use(express.static('/www'));
-app.use(bodyParser.json(corsOptions))
-app.use(cors())
+app.use(express.static(__dirname + '/www'));
+app.use(bodyParser.json())
+app.use(cors(corsOptions))
 
 app.get("/api/user", userCtrl.getAllUsers)
 app.post("/api/user", userCtrl.addUser)
@@ -28,10 +27,12 @@ app.post("/api/wod", wodCtrl.addWod)
 app.put("/api/wod/:id", wodCtrl.editWod)
 app.delete("/api/wod/:id", wodCtrl.deleteWod)
 
+mongoose.set('debug', true)
+mongoose.connect("mongodb://localhost/xFit")
 
 
 
-var port = 8100;
+var port = 3000;
 app.listen(port, function(){
   console.log("Listening to " + port );
 })

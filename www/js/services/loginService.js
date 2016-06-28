@@ -1,4 +1,4 @@
-angular.module("crossfit").service('userService', function($http){
+angular.module("crossfit").service('loginService', function($http){
   this.getAllUsers = function(user){
     return $http.get("http://localhost:3000/api/user", user).then(function(res){
       return res
