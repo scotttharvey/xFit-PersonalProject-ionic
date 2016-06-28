@@ -2,10 +2,10 @@
 <body ng-controller="navCtrl">
   <div class="nav">
     <ul>
-      <li ng-show="true" ng-click="showAll()"><a ><img src="./img/hamburger.png"/></a></li>
-      <li ng-hide="true"><a ui-sref="wod">WOD</a></li>
-      <li ng-hide="true"><a ui-sref="home">Home</a></li>
-      <li ng-hide="true"> <a ui-sref="user">Profile</a></li>
+      <li ng-click="goNav = !goNav" ng-click="showAll()"><a ><img src="./img/hamburger.png"/></a></li>
+      <li ng-show="goNav"><a ui-sref="wod">WOD</a></li>
+      <li ng-show="goNav"><a ui-sref="home">Home</a></li>
+      <li ng-show="goNav"> <a ui-sref="user">Profile</a></li>
     </ul>
   </div>
 
