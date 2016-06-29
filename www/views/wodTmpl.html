@@ -1,10 +1,21 @@
 <section>
   <nav-bar><nav-bar>
 </section>
-<ul>
-  <section ng-repeat="wod in getWods">
-      {{wod}}
-  </section>
 
+<ul class="homewods" ng-repeat="wod in getWods">
+
+      <div class="homewods">
+        {{wod.name}} <br> {{wod.description}}
+      </div>
+        <br>
 </ul>
+
+      <input placeholder="wod name" ng-model="wod.name">
+
+      <input placeholder="about" ng-model="wod.description">
+
+      <button type="button" name="button" ng-click="addWod(wod)">Add</button>
+
+
+
 This is Wod HTML

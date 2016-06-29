@@ -3,7 +3,7 @@ angular.module('crossfit').controller('userCtrl', function($scope, userService) 
       userService.addUser(userObj).then(function(res){
         console.log(res);
         if(res.status === 200){
-          console.log("User added Successfully!");
+          console.log("User added Successfully");
         } else {
           console.log("Didnt work :[" );
         }

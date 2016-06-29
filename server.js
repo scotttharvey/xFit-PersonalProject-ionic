@@ -20,6 +20,7 @@ app.use(cors(corsOptions))
 app.get("/api/user", userCtrl.getAllUsers)
 app.post("/api/user", userCtrl.addUser)
 app.put("/api/user/:id", userCtrl.updateUser)
+app.delete("/api/use/:id", userCtrl.deleteUser)
 
 
 app.get("/api/wod", wodCtrl.getAllWods)

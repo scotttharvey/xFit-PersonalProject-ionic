@@ -4,11 +4,10 @@
 <input  ng-model="user">
 <button type="button" name="button" ng-click="getUsers(user)">Find</button>
 
-  <div ng-repeat="user in users">
+  <ul ng-repeat="user in users">
 
-</div>
+    <div class="">
+      {{user.username}}
+    </div>
 
-
-
-
-This is home HTML
+</ul>
