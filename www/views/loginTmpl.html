@@ -1,9 +1,29 @@
 
 
-<ul>
-  <input ng-model="user.username" placeholder="username">
+<section>
+  <nav-bar>
+    <nav-bar>
+</section>
 
-  <input ng-model="user.password" placeholder="password">
+<div class="list">
+  <label class="item item-input">
+    <span class="input-label">Username</span>
+    <input type="text">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Password</span>
+    <input type="password">
+  </label>
+</div>
+<br>
+<button class="button button-block button-calm">
+  Sign In
+</button>
+<br>
+<p>
+  <a ui-sref="signUp"> Not a User? Sign up </a>
+</p>
 
-</ul>
-<button type="button" name="button" ng-click="addNewUser(user)" ui-sref="home">Login</button>
+<!-- <button class="button button-outline button-positive">
+  Sign Up
+</button> -->

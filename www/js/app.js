@@ -25,7 +25,7 @@ angular.module('crossfit', ['ionic'])
   })
   .config(function($urlRouterProvider, $stateProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/login');
 
     $stateProvider
       .state('main', {
@@ -36,6 +36,11 @@ angular.module('crossfit', ['ionic'])
       .state('login', {
         url: "/login",
         templateUrl: "../views/loginTmpl.html",
+        controller: "loginCtrl"
+      })
+      .state('signUp', {
+        url: "/signup",
+        templateUrl: "../views/signUpTmpl.html",
         controller: "loginCtrl"
       })
       .state('user', {

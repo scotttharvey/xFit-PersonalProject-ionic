@@ -1,13 +1,10 @@
 <section>
   <nav-bar><nav-bar>
 </section>
-<input  ng-model="user">
-<button type="button" name="button" ng-click="getUsers(user)">Find</button>
+<input placeholder="search" ng-model="search">
+<!-- <button type="button" name="button" ng-click="getUsers(user)">Find</button> -->
+  <ul ng-repeat="user in users | filter:search">
 
-  <ul ng-repeat="user in users">
-
-    <div class="">
       {{user.username}}
-    </div>
 
 </ul>
