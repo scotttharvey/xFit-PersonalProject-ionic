@@ -1,7 +1,7 @@
 angular.module('crossfit').controller('wodCtrl', function($scope, wods, wodService) {
  console.log("Wod CTrl");
  console.log(wods);
-
+$scope.toggleFooter = false;
 $scope.getWods = wods;
 
 $scope.addWod = function(wod){
@@ -33,6 +33,10 @@ $scope.removeWod = function(wod){
       console.log("Didnt work :[" );
     }
   })
+}
+$scope.showFooter = function(){
+  $scope.toggleFooter = !$scope.toggleFooter
+  console.log($scope.toggleFooter);
 }
 $scope.shouldShowDelete = false;
 $scope.shouldShowReorder = false;

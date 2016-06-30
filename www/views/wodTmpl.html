@@ -6,10 +6,10 @@
 <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
   <ion-scroll style="height: 100vh;">
 
-  <ion-item ng-repeat="wod in getWods" class="item-thumbnail-left" <img ng-src="{{item.img}}">
+  <ion-item ng-repeat="wod in getWods | orderBy:'-date'" class="item-thumbnail-left" <img ng-src="{{item.img}}">
   <div>
     <h2>{{wod.date | date: 'MMM/ d/ y'}}</h2>
-    <h2>{{wod.name}}</h2>
+    <h1>{{wod.name}}</h1>
   </div>
 
 
@@ -18,22 +18,30 @@
     </ion-option-button>
     <ion-option-button class="button-info" ng-click="editWods(item)">
       Edit
-    <!-- </ion-option-button>
-    <ion-delete-button class="ion-minus-circled" ng-click="getWods.splice($index, 1)">
-    </ion-delete-button>
-    <ion-reorder-button class="ion-navicon" on-reorder="reorderItem(item, $fromIndex, $toIndex)">
-    </ion-reorder-button> -->
 
   </ion-item>
 </ion-scroll>
 
 </ion-list>
+<section ng-click="showFooter()">
+  <div class="bar bar-footer bar-balanced" ui-sref="addWod">
+    <div class="title">ADD + </div>
+  </div>
+</section>
 
 
-<div class="bar bar-footer" >
-  <input placeholder="wod name" ng-model="wod.name">
 
-  <input placeholder="about" ng-model="wod.description">
 
-  <button type="button" name="button" ng-click="addWod(wod)">Add</button>
-</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<!--FAN  -->

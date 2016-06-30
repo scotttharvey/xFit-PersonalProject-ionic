@@ -20,7 +20,7 @@
   justify-content: center;;
   align-items: center;
   font-family: 'Oswald', sans-serif;
-  font-size: 2.7em;
+  font-size: 2.1em;
   line-height: 40px;
   height: 70px;
   border-bottom: 1px solid #888;
@@ -62,17 +62,4 @@
   .nav li {
     display: inline-block;
     margin-right: -4px;
-  }
-
-
-
-  .foot {
-    display: flex;
-    align-items: center;
-    position: fixed;
-    bottom: 0;
-    width:100%;
-    height:60px;
-    background-color:#6cf;
-
   }
