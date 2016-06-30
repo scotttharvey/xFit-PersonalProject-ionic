@@ -25,7 +25,7 @@ angular.module('crossfit', ['ionic'])
   })
   .config(function($urlRouterProvider, $stateProvider) {
 
-    $urlRouterProvider.otherwise('/addWod');
+    $urlRouterProvider.otherwise('/login');
 
     $stateProvider
       .state('main', {
@@ -56,26 +56,14 @@ angular.module('crossfit', ['ionic'])
       .state('addWod', {
         url: "/addWod",
         templateUrl: "../views/addWod.html",
-        controller: "wodCtrl",
-        resolve: {
-          wods: function(wodService) {
-            return wodService.getAllWods().then(function(res) {
-              return res.data;
-            })
-          }
-        }
+        controller: "addWodCtrl"
+
       })
       .state('wod', {
         url: "/wod",
         templateUrl: "../views/wodTmpl.html",
-        controller: "wodCtrl",
-        resolve: {
-          wods: function(wodService) {
-            return wodService.getAllWods().then(function(res) {
-              return res.data;
-            })
-          }
-        }
+        controller: "wodCtrl"
+
       })
 
   })

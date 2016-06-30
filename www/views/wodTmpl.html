@@ -6,26 +6,27 @@
 <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
   <ion-scroll style="height: 100vh;">
 
-  <ion-item ng-repeat="wod in getWods | orderBy:'-date'" class="item-thumbnail-left" <img ng-src="{{item.img}}">
+  <ion-item ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left" <img ng-src="{{item.img}}">
   <div>
     <h2>{{wod.date | date: 'MMM/ d/ y'}}</h2>
     <h1>{{wod.name}}</h1>
   </div>
 
 
-    <ion-option-button class="button-positive" ng-click="byeWod(item)">
+    <ion-option-button class="button-positive" ng-model="selected" ng-click="removeWod(wod._id)">
       Remove
     </ion-option-button>
-    <ion-option-button class="button-info" ng-click="editWods(item)">
+    <ion-option-button class="button-info" ng-click="editWod(wod._id); openModal(wod)">
       Edit
 
   </ion-item>
 </ion-scroll>
-
 </ion-list>
+
+
 <section ng-click="showFooter()">
   <div class="bar bar-footer bar-balanced" ui-sref="addWod">
-    <div class="title">ADD + </div>
+    <div class="title"><a> ADD + <a/></div>
   </div>
 </section>
 

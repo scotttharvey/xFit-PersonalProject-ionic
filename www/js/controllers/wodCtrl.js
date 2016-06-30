@@ -1,45 +1,63 @@
-angular.module('crossfit').controller('wodCtrl', function($scope, wods, wodService) {
- console.log("Wod CTrl");
- console.log(wods);
-$scope.toggleFooter = false;
-$scope.getWods = wods;
+angular.module('crossfit').controller('wodCtrl', function($scope, wodService, $ionicModal) {
 
-$scope.addWod = function(wod){
-  wodService.addWod(wod).then(function(res){
-    $scope.getWods = res;
-    if(res.status === 200){
-      console.log("Wod added Successfully");
-    } else {
-      console.log("Didnt work :[" );
-    }
-  })
-};
-$scope.editWod = function(wod){
-  wodService.updateWod(wod).then(function(res){
-    $scope.getWods = res;
-    if(res.status === 200){
-      console.log("Wod added Successfully");
-    } else {
-      console.log("Didnt work :[" );
-    }
-  })
-};
-$scope.removeWod = function(wod){
-  wodService.deleteWod(wod).then(function(res){
-    $scope.byeWod = res._id;
-    if(res.status === 200){
-      console.log("Wod removed Successfully");
-    } else {
-      console.log("Didnt work :[" );
-    }
+$scope.toggleFooter = false;
+
+
+$scope.getAllWods = function(){
+  wodService.getAllWods().then(function(res){
+    $scope.allWods = res.data;
   })
 }
+$scope.getAllWods();
+
+$scope.addWod = function(wod){
+  wodService.addWod(wod);
+    $scope.getAllWods();
+
+
+};
+$scope.editWod = function(wod){
+  wodService.editWod(wod);
+    $scope.getAllWods();
+
+};
+$scope.removeWod = function(wod){
+
+  wodService.deleteWod(wod);
+  $scope.getAllWods();
+
+}
+
 $scope.showFooter = function(){
   $scope.toggleFooter = !$scope.toggleFooter
-  console.log($scope.toggleFooter);
 }
 $scope.shouldShowDelete = false;
 $scope.shouldShowReorder = false;
-$scope.listCanSwipe = true
+$scope.listCanSwipe = true;
 
+$ionicModal.fromTemplateUrl('./views/editModal.html', {
+   scope: $scope,
+   animation: 'slide-in-up'
+ }).then(function(modal) {
+   $scope.modal = modal;
+ });
+ $scope.openModal = function(wod) {
+   $scope.wod = wod;
+   $scope.modal.show();
+ };
+ $scope.closeModal = function() {
+   $scope.modal.hide();
+ };
+ // Cleanup the modal when we're done with it!
+ $scope.$on('$destroy', function() {
+   $scope.modal.remove();
+ });
+ // Execute action on hide modal
+ $scope.$on('modal.hidden', function() {
+   // Execute action
+ });
+ // Execute action on remove modal
+ $scope.$on('modal.removed', function() {
+   // Execute action
+ });
 })

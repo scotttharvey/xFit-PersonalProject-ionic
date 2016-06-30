@@ -31,7 +31,7 @@ module.exports = {
   },
   deleteWod: function(req, res, next){
     var id = req.params.id;
-    Wod.findByIdAndRemove(id, req.body, function(err, ans){
+    Wod.findByIdAndRemove(id, function(err, ans){
       if(err){
         res.status(500).json(err)
       } else{

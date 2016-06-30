@@ -5,12 +5,12 @@
 <div class="list">
   <label class="item item-input item-floating-label">
     <span class="input-label">Wod Name</span>
-<textarea rows='4' cols='50' style="background-color: transparent" type="text" placeholder="Wod Name">
+<textarea ng-model="wod.name" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="Wod Name">
 </textarea>
 </label>
   <label class="item item-input item-floating-label">
     <span class="input-label">About</span>
-<textarea rows='4' cols='50' style="background-color: transparent" type="text" placeholder="Description">
+<textarea ng-model="wod.description"rows='4' cols='50' style="background-color: transparent" type="text" placeholder="Description">
 </textarea>
  </label>
   <label class="item item-input item-floating-label">
@@ -19,6 +19,6 @@
     </textarea>
   </label>
 </div>
-<button class="button button-block button-calm">
+<button class="button button-block button-calm" ng-click="addWod(wod); showAlert()">
   ADD WOD
 </button>

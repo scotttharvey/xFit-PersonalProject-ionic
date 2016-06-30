@@ -1,0 +1,30 @@
+
+<ion-modal-view>
+  <div class="bar bar-header bar-energized">
+    <div class="title">Editing Mode</div>
+  </div>
+  <br>
+  <h1>{{wod.name}} - {{wod.date | date: 'MMM/ d/ y'}}</h1>
+  <div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">edit name</span>
+    <input type="text" placeholder="{{wod.name}}">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">edit date</span>
+    <input type="text" placeholder="{{wod.date | date: 'MMM/ d/ y'}}">
+  </label>
+  <label class="item item-text-area item-stacked-label">
+    <span class="input-label">edit description</span>
+    <textarea rows='4' cols='50' style="background-color: transparent" type="text" placeholder="{{wod.description}}">
+    </textarea>
+  </label>
+</div>
+
+<button ui-sref="wod" class="button button-block button-positive">
+  edit wod
+</button>
+<button ui-sref="wod" class="button button-block button-positive">
+  cancel
+</button>
+</ion-modal-view>
