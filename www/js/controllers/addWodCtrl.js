@@ -1,4 +1,4 @@
-angular.module('crossfit').controller('addWodCtrl', function($scope, wodService, $ionicPopup, $timeout) {
+angular.module('crossfit').controller('addWodCtrl', function($scope, wodService, $ionicPopup, $timeout, $state) {
 
   $scope.showAlert = function() {
     var alertPopup = $ionicPopup.alert({
