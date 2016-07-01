@@ -1,9 +1,13 @@
-<section>
-  <nav-bar><nav-bar>
-</section>
+
+
+  <ion-content>
+    <section>
+      <nav-bar><nav-bar>
+    </section>
 
   <h2 class="title">Home</h2>
-  </div>
+
+
 
 
   <label class="item item-input">
@@ -13,7 +17,7 @@
 </label>
 
 <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
-  <ion-scroll>
+
   <ion-item ng-repeat="user in allUsers | filter:search" class="item item-avatar item-thumbnail-left" >
 
 <img src="./img/lindsay.png">
@@ -27,8 +31,11 @@
     Remove
   </ion-option-button>
 </ion-item>
-</ion-scroll>
+
 </ion-list>
+</section>
+</ion-content>
+
 
 
 

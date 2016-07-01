@@ -8,8 +8,11 @@ var app = express();
 
 var userCtrl = require("./server/controllers/userCtrl")
 var wodCtrl = require("./server/controllers/wodCtrl")
+var boxCtrl = require("./server/controllers/boxCtrl")
+
 var User = require("./server/models/userSchema.js")
 var Wod = require("./server/models/wod.js")
+var Box = require("./server/models/boxSchema.js")
 var corsOptions = {
   origin: "http://localhost:8100"
 }
@@ -26,6 +29,12 @@ app.get("/api/wod", wodCtrl.getAllWods)
 app.post("/api/wod", wodCtrl.addWod)
 app.put("/api/wod/:id", wodCtrl.editWod)
 app.delete("/api/wod/:id", wodCtrl.deleteWod)
+
+app.get("/api/box", boxCtrl.getAllBoxes)
+app.post("/api/box", boxCtrl.addBox)
+app.put("/api/box/:id", boxCtrl.updateBox)
+app.delete("/api/box/:id", boxCtrl.deleteBox)
+
 
 mongoose.set('debug', true)
 mongoose.connect("mongodb://localhost/xFit")

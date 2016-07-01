@@ -1,14 +1,15 @@
 
-
+<ion-content>
 <section>
   <nav-bar>
-    <nav-bar>
+  </nav-bar>
 </section>
 
 
 
+
 <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
-  <ion-scroll>
+
 
   <ion-item ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left">
     <!-- <img ng-src="{{item.img}}"> -->
@@ -26,9 +27,9 @@
     </ion-option-button>
 
   </ion-item>
-</ion-scroll>
-</ion-list>
 
+</ion-list>
+</ion-content>
 
 
 <section ng-click="showFooter()">
