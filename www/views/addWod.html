@@ -3,21 +3,29 @@
     <nav-bar>
 </section>
 <div class="list">
+  <label class="item item-input">
+    <span style="color: red" class="input-label">Date</span>
+    <input type="date" ng-model="wod.date">
+  </label>
   <label class="item item-input item-floating-label">
-    <span class="input-label">Wod Name</span>
-<textarea ng-model="wod.name" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="Wod Name">
-</textarea>
+    <span style="color: red" class="input-label">Wod Name</span>
+<textarea ng-model="wod.name" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="Wod Name*"></textarea>
 </label>
   <label class="item item-input item-floating-label">
-    <span class="input-label">About</span>
-<textarea ng-model="wod.description"rows='4' cols='50' style="background-color: transparent" type="text" placeholder="Description">
-</textarea>
+    <span style="color: red" class="input-label">Wod Description</span>
+<textarea ng-model="wod.description" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="Description*"></textarea>
  </label>
   <label class="item item-input item-floating-label">
-    <span class="input-label">Recomended Weight</span>
-    <textarea rows='4' cols='50' style="background-color: transparent" type="text" placeholder="RX">
-    </textarea>
+    <span class="input-label">RX</span>
+    <textarea ng-model="wod.rx" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="RX"></textarea>
   </label>
+  <label class="item item-input item-floating-label">
+    <span class="input-label">RX</span>
+    <textarea ng-model="wod.warmup" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="Warm Up"></textarea>
+  </label>  <label class="item item-input item-floating-label">
+      <span class="input-label">RX</span>
+      <textarea ng-model="wod.comments" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="Comments"></textarea>
+    </label>
 </div>
 <button ui-sref="wod" class="button button-block button-calm" ng-click="addWod(wod); showAlert(); closeModal()">
   ADD WOD

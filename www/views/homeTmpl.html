@@ -2,7 +2,38 @@
   <nav-bar><nav-bar>
 </section>
 
-<div class="list card">
+  <h2 class="title">Home</h2>
+  </div>
+
+
+  <label class="item item-input">
+  <i class="icon ion-search placeholder-icon"></i>
+  <input type="search" placeholder="search user" ng-model="search">
+
+</label>
+
+<ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+  <ion-scroll>
+  <ion-item ng-repeat="user in allUsers | filter:search" class="item item-avatar item-thumbnail-left" >
+
+<img src="./img/lindsay.png">
+<h1 class="title">{{user.username}}</h1>
+
+  <h2 >{{user.password}}</h2>
+
+
+
+  <ion-option-button class="button-positive" ng-model="selected" ng-click="removeUser(user._id); showAlert()">
+    Remove
+  </ion-option-button>
+</ion-item>
+</ion-scroll>
+</ion-list>
+
+
+
+
+<!-- <div class="list card">
 
   <div class="item item-avatar">
     <img src="mcfly.jpg">
@@ -12,13 +43,7 @@
 
   <div class="item item-body">
     <img class="full-image" src="delorean.jpg">
-    <input placeholder="search" ng-model="search">
-    <!-- <button type="button" name="button" ng-click="getUsers(user)">Find</button> -->
-      <ul ng-repeat="user in users | filter:search">
 
-          {{user.username}}
-
-    </ul>
     <p>
       This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
       the content is from a card-body consisting of an image and paragraph text. The footer
@@ -30,4 +55,4 @@
     </p>
   </div>
 
-</div>
+</div> -->

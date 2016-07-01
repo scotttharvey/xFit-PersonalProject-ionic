@@ -66,4 +66,10 @@ angular.module('crossfit').controller('wodCtrl', function($scope, wodService, $i
       template: 'Wod Edited Successfully'
     })
   };
+  $scope.removeAlert = function(obj) {
+    var alertPopup = $ionicPopup.alert({
+      title: 'Wod Removed',
+      template: obj + ' Removed Successfully'
+    })
+  };
 })

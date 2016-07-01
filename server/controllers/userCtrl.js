@@ -32,7 +32,7 @@ module.exports = {
   },
   deleteUser: function(req, res, next){
     var id = req.params.id;
-    User.findByIdAndUpdate(id, function(err, ans){
+    User.findByIdAndRemove(id, function(err, ans){
       if(err){
         res.status(500).json(err);
       } else{
