@@ -7,6 +7,15 @@ var wodSchema = new Schema({
   warmup: {type: String, required: false},
   comments: {type: String},
   rx: {type: String},
-  date: {type: Date, default: Date.now}
+  date: {type: Date, default: Date.now},
+  comments: [{
+    comment: String,
+    user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+}]
+}, {timestamps: true})
+
+wodSchema.pre('find', function(next) {
+  this.populate('user comments.user');
+  next();
 })
 module.exports = mongoose.model("Wod", wodSchema)

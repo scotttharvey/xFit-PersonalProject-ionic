@@ -1,6 +1,6 @@
 
 
-  <ion-content>
+  <ion-content  ng-model='admin' >
     <section>
       <nav-bar><nav-bar>
     </section>
@@ -25,11 +25,14 @@
 
   <h2 >{{user.admin}}</h2>
 
-
-
-  <ion-option-button class="button-positive" ng-model='admin' ng-if='admin'  ng-click="removeUser(user._id); showAlert()">
+<section ng-if"admin">
+  <ion-option-button class="button-positive"  ng-click="removeUser(user._id); showAlert()">
     Remove
   </ion-option-button>
+
+
+</section>
+
 </ion-item>
 
 </ion-list>

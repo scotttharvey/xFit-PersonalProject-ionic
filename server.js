@@ -30,16 +30,21 @@ app.post('/auth/signup', userCtrl.userSignUp);
 
 app.get("/api/me", userCtrl.ensureAuthenticated, userCtrl.getCurrentUser)
 
+app.post('/api/metconWod/', userCtrl.addExistingWod);
 
 app.get("/api/wod", wodCtrl.getAllWods)
 app.post("/api/wod", wodCtrl.addWod)
 app.put("/api/wod/:id", wodCtrl.editWod)
 app.delete("/api/wod/:id", wodCtrl.deleteWod)
+app.post('/api/wod/comment/', wodCtrl.addComment);
+app.delete('/api/wod/comment/:id/:status', wodCtrl.deleteComment);
+
 
 app.get("/api/box", boxCtrl.getAllBoxes)
 app.post("/api/box", boxCtrl.addBox)
 app.put("/api/box/:id", boxCtrl.updateBox)
 app.delete("/api/box/:id", boxCtrl.deleteBox)
+
 
 
 mongoose.set('debug', true)

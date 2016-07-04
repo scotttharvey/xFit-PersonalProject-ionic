@@ -1,40 +1,64 @@
-
 <ion-content>
-<section>
-  <nav-bar>
-  </nav-bar>
-</section>
+  <section>
+    <nav-bar>
+    </nav-bar>
+  </section>
 
 
 
 
-<ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+  <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
 
-  <ion-item ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left">
-    <!-- <img ng-src="{{item.img}}"> -->
-  <div>
-    <h1 class="title">{{wod.date | date: 'MMM/ d/ y'}}</h1>
-    <h1 class="title">{{wod.name}}</h1>
-  </div>
+    <ion-item ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left">
+      <!-- <img ng-src="{{item.img}}"> -->
+      <div>
+        <h1 class="title">{{wod.date | date: 'MMM/ d/ y'}}</h1>
+        <h1 class="title">{{wod.name}}</h1>
+      </div>
 
 
-    <ion-option-button class="button-positive" ng-model="selected" ng-click="removeWod(wod._id); removeAlert(wod.name)">
-      Remove
-    </ion-option-button>
+      <div ng-hide='custom'>
+        <textarea placeholder='add comment' ng-model="newComment"></textarea>
 
-    <ion-option-button class="button-info" ng-click="editWod(wod._id); openModal(wod)">
-      Edit
-    </ion-option-button>
+        <button type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" name="button">Submit</button>
+      </div>
+      <div ng-hide='custom'>
+        <textarea id='customComment' placeholder='time' ng-model="storeWod"></textarea>
 
-  </ion-item>
+        <button type="button" ng-click="addCurrentWod(currentUser._id, wod._id, storeWod)" name="button">Submit</button>
 
-</ion-list>
+      </div>
+
+      <div  ng-repeat='comments in allWods.comments track by $index'>
+        {{comments.user.username}}: {{comments.comment}}
+
+
+      </div>
+
+
+
+
+
+
+
+
+      <ion-option-button class="button-positive" ng-model="selected" ng-click="removeWod(wod._id); removeAlert(wod.name)">
+        Remove
+      </ion-option-button>
+
+      <ion-option-button class="button-info" ng-click="editWod(wod._id); openModal(wod)">
+        Edit
+      </ion-option-button>
+
+    </ion-item>
+
+  </ion-list>
 </ion-content>
 
 
-<section ng-model='admin' ng-if='admin' ng-click="showFooter()">
-  <div class="bar bar-footer bar-balanced" ui-sref="addWod">
+<section ng-model='admin' ng-click="showFooter()">
+  <div ng-if='admin' class="bar bar-footer bar-balanced" ui-sref="addWod">
     <div class="title"><a> ADD + <a/></div>
   </div>
 </section>

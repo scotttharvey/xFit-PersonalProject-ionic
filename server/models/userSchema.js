@@ -10,7 +10,10 @@ var userSchema = new Schema({
   number: {type: Number, required: false},
   date: {type: Date, default: Date.now},
   about: {type: String, required: false},
-  admin: {type: Boolean, default: false, required: true}
+  admin: {type: Boolean, default: false, required: true},
+  wods:[{time:String,
+  wod:{type: mongoose.Schema.Types.ObjectId, ref: 'Wod'}
+  }]
 })
 
 userSchema.pre('save', function(next) {

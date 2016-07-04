@@ -1,7 +1,12 @@
-angular.module('crossfit').controller('wodCtrl', function($scope, wodService, $ionicModal, $ionicPopup) {
+angular.module('crossfit').controller('wodCtrl', function($scope, settingsService, wodService, $ionicModal, $ionicPopup) {
 
   $scope.toggleFooter = false;
 
+  settingsService.getCurrentUser().then(function(res) {
+    $scope.currentUser = res.data
+    $scope.admin = res.data.admin
+    console.log($scope.currentUser);
+  })
 
   $scope.getAllWods = function() {
     wodService.getAllWods().then(function(res) {
@@ -26,6 +31,26 @@ angular.module('crossfit').controller('wodCtrl', function($scope, wodService, $i
     wodService.deleteWod(wod);
     $scope.getAllWods();
 
+  }
+  $scope.addCurrentWod = function(userId, postId, newComment, showIndex) {
+      wodService.addCurrentWod(userId, postId, newComment).then(function(res) {
+          wodService.getAllWods()
+          $scope.getAllWods();
+      })
+  }
+  $scope.postComment = function(userId, postId, newComment, showIndex) {
+    wodService.postComment(userId, postId, newComment).then(function(res) {
+
+      wodService.getAllWods()
+      $scope.getAllWods();
+
+    })
+  }
+
+  $scope.deleteComment = function(id, dailyId) {
+    wodService.deleteComment(id, dailyId);
+    wodService.getAllWods()
+    $scope.getAllWods();
   }
 
   $scope.showFooter = function() {
