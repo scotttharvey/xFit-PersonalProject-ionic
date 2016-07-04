@@ -28,6 +28,9 @@ app.delete("/api/user/:id", userCtrl.deleteUser)
 app.post('/auth/login', userCtrl.userLogin);
 app.post('/auth/signup', userCtrl.userSignUp);
 
+app.get("/api/me", userCtrl.ensureAuthenticated, userCtrl.getCurrentUser)
+
+
 app.get("/api/wod", wodCtrl.getAllWods)
 app.post("/api/wod", wodCtrl.addWod)
 app.put("/api/wod/:id", wodCtrl.editWod)

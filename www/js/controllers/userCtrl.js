@@ -17,6 +17,12 @@ angular.module('crossfit').controller('userCtrl', function($scope, userService, 
           console.log("Didnt work  ");
         }
       })
-    }
+    },
+
+    userService.getCurrentUser().then(function(res){
+      $scope.currentUser = res.data
+      $scope.admin = res.data.admin
+      console.log($scope.currentUser);
+    })
 
 })

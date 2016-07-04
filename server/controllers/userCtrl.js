@@ -13,6 +13,21 @@ function createJWT(user) {
   return jwt.encode(payload, Keys.TOKEN_SECRET);
 }
   module.exports = {
+    getUser: function(req, res){
+      var id = req.params.id;
+      User.findById(id, function(err, ans){
+        if(err){
+            res.status(500).send(err);
+        }else{
+            res.status(200).send(data);
+        }
+      })
+    },
+    getCurrentUser: function(req, res){
+      User.findById(req.user, function(err, user){
+        res.send(user);
+      })
+    },
     addUser: function(req, res){
    var user = new User(req.body);
    user.save(function(err, data){
@@ -24,6 +39,7 @@ function createJWT(user) {
    })
 },
     userLogin : function(req, res) {
+    console.log(req);
        User.findOne({ username: req.body.username }, 'username password', function(err, user) {
          if (!user) {
            return res.status(401).send({ message: 'Invalid email and/or password' });
@@ -57,7 +73,8 @@ function createJWT(user) {
          });
        });
    },
-   ensureAuthenticated:function(req, res, next) {
+
+   ensureAuthenticated: function(req, res, next) {
      if (!req.header('Authorization')) {
        return res.status(401).send({ message: 'Please make sure your request has an Authorization header' });
      }
