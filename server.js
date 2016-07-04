@@ -25,6 +25,9 @@ app.post("/api/user", userCtrl.addUser)
 app.put("/api/user/:id", userCtrl.updateUser)
 app.delete("/api/user/:id", userCtrl.deleteUser)
 
+app.post('/auth/login', userCtrl.userLogin);
+app.post('/auth/signup', userCtrl.userSignUp);
+
 app.get("/api/wod", wodCtrl.getAllWods)
 app.post("/api/wod", wodCtrl.addWod)
 app.put("/api/wod/:id", wodCtrl.editWod)

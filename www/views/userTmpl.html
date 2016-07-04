@@ -1,13 +1,28 @@
+<ion-content>
 <section>
   <nav-bar><nav-bar>
 </section>
 
-<input ng-model="user.username">
+<div class="list">
+  <label class="item item-input">
+    <span class="input-label">Username</span>
+    <input type="text" ng-model="user.username">
+  </label>
+  <label class="item item-input">
+    <span class="input-label">Password</span>
+    <input type="password" ng-model="user.password">
+  </label>
+</div>
 
-<input ng-model="user.password">
+<button ui-sref='settings' class="button icon ion-gear-a"></button>
 
-<button type="button" name="button" ng-click="addNewUser(user)">Add</button>
 
-<button type="button" name="button" ng-click="getUsers(user)">Get</button>
 
-USER
+<button class="button button-clear button-positive" type="button" name="button" ng-click="addNewUser(user)">
+Add
+</button>
+
+<button class="button button-clear button-positive" type="button" name="button" ng-click="getUsers(user)">
+  Get Users
+</button>
+</ion-content>

@@ -10,4 +10,9 @@ var userSchema = new Schema({
   date: {type: Date, default: Date.now},
   about: {type: String, required: false}
 })
+
+
+
+
+
 module.exports = mongoose.model("User", userSchema)

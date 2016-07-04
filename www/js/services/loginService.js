@@ -1,17 +1,26 @@
 angular.module("crossfit").service('loginService', function($http){
+  this.userSignUp = function(){
+   return $http({
+       method:"POST",
+       url:"api/login"
+   }).then(function(response){
+       return response
+   })
+},
+this.userLogin = function(user){
+  return $http.post("http://localhost:3000/api/signup", user).then(function(res){
+  return res
+  })
+},
   this.getAllUsers = function(user){
-    return $http.get("http://localhost:3000/api/user", user).then(function(res){
+    return $http.get("http://localhost:3000/api/login", user).then(function(res){
       return res
     })
   },
 
-  this.addUser = function(user){
-    return $http.post("http://localhost:3000/api/user", user).then(function(res){
-    return res
-    })
-  },
+
   this.updateUser = function(user){
-    return $http.put("http://localhost:3000/api/user", user).then(function(res){
+    return $http.put("http://localhost:3000/api/login", user).then(function(res){
     return res
     })
   },

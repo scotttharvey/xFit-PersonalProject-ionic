@@ -3,7 +3,7 @@
 // angular.module is a global place for creating, registering and retrieving Angular modules
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
-angular.module('crossfit', ['ionic'])
+angular.module('crossfit', ['ionic', 'satellizer'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -15,7 +15,7 @@ angular.module('crossfit', ['ionic'])
         // Don't remove this line unless you know what you are doing. It stops the viewport
         // from snapping when text inputs are focused. Ionic handles this internally for
         // a much nicer keyboard experience.
-        cordova.plugins.Keyboard.disableScroll(true);
+        cordova.plugins.Keyboard.disableScroll(false);
       }
       if (window.StatusBar) {
         StatusBar.styleDefault();
@@ -41,7 +41,7 @@ angular.module('crossfit', ['ionic'])
       .state('signUp', {
         url: "/signup",
         templateUrl: "../views/signUpTmpl.html",
-        controller: "loginCtrl"
+        controller: "signUpCtrl"
       })
       .state('user', {
         url: "/user",
@@ -65,5 +65,12 @@ angular.module('crossfit', ['ionic'])
         controller: "wodCtrl"
 
       })
+      .state('settings', {
+        url: "/settings",
+        templateUrl: "../views/settingsTmpl.html",
+        controller: "settingsCtrl"
+
+      })
+
 
   })
