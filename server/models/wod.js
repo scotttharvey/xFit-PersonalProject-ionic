@@ -8,6 +8,7 @@ var wodSchema = new Schema({
   comments: {type: String},
   rx: {type: String},
   date: {type: Date, default: Date.now},
+  tips: {type: String},
   comments: [{
     comment: String,
     user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}

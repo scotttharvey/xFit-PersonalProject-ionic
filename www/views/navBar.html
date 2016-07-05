@@ -1,6 +1,6 @@
 
-<body ng-controller="navCtrl">
-  <div class="nav">
+  <div class="navi" id="navi">
+
     <ul>
       <li ng-click="goNav = !goNav" ng-click="showAll()"><a>  BOXWOD </a><img src="./img/hamburger.png"/></li>
       <li ng-show="goNav"><a ui-sref="wod">WOD</a></li>
@@ -8,5 +8,3 @@
       <li ng-show="goNav"> <a ui-sref="user">Profile</a></li>
     </ul>
   </div>
-
-</body>

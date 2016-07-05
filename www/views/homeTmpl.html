@@ -1,13 +1,10 @@
 
+<section>
+  <nav-bar><nav-bar>
+</section>
 
-  <ion-content  ng-model='admin' >
-    <section>
-      <nav-bar><nav-bar>
-    </section>
-
+  <ion-content  ng-model='admin' class="space">
   <h2 class="title">Home</h2>
-
-
 
 
   <label class="item item-input">
@@ -18,12 +15,14 @@
 
 <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
-  <ion-item ng-repeat="user in allUsers | filter:search" class="item item-avatar item-thumbnail-left" >
+  <ion-item ng-if='search' ng-repeat="user in allUsers | filter:search |orderBy:'_id' as filtered_result track by user._id"  class="item item-avatar item-thumbnail-left" >
 
 <img src="./img/lindsay.png">
 <h1 class="title">{{user.username}}</h1>
 
   <h2 >{{user.admin}}</h2>
+{{user}}
+
 
 <section ng-if"admin">
   <ion-option-button class="button-positive"  ng-click="removeUser(user._id); showAlert()">
@@ -34,7 +33,10 @@
 </section>
 
 </ion-item>
+<div class="" ng-show="filtered_result.length == 0">
+No results found
 
+</div>
 </ion-list>
 </ion-content>
 

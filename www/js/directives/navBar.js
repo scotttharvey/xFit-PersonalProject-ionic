@@ -1,13 +1,16 @@
 angular.module("crossfit").directive("navBar", function(){
   return {
     templateUrl: '../views/navBar.html',
-    restric: "EA",
+    restrict: "EA",
     scope: {
 
     },
     link: function(scope, element, attrs){
-      
-    }
+
+    },
+    
+    controller: "navCtrl"
+
 
   }
 })

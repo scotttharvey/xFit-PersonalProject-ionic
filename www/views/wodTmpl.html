@@ -1,24 +1,24 @@
-<ion-content>
+
   <section>
     <nav-bar>
     </nav-bar>
   </section>
 
-
+<ion-content class="space" >
 
 
   <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
 
-    <ion-item ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left">
+    <ion-item ng-click="editWod(wod._id); openModal(wod)" ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left">
       <!-- <img ng-src="{{item.img}}"> -->
       <div>
-        <h1 class="title">{{wod.date | date: 'MMM/ d/ y'}}</h1>
+        <h2 class="title h2">{{wod.date | date: 'EEEE'}} - {{wod.date | date: 'MMM/ d/ y'}}</h2>
         <h1 class="title">{{wod.name}}</h1>
       </div>
 
 
-      <div ng-hide='custom'>
+      <!-- <div ng-hide='custom'>
         <textarea placeholder='add comment' ng-model="newComment"></textarea>
 
         <button type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" name="button">Submit</button>
@@ -34,11 +34,11 @@
         {{stuff.comment}}: {{stuff.user.username}}
 
 
-      </div>
+      </div> -->
 
 
 
-      <ion-option-button class="button-positive" ng-model="selected" ng-click="removeWod(wod._id); removeAlert(wod.name)">
+      <ion-option-button class="button-positive" ng-model="admin " ng-click="removeWod(wod._id); removeAlert(wod.name)">
         Remove
       </ion-option-button>
 
@@ -52,7 +52,7 @@
 </ion-content>
 
 
-<section  ng-click="showFooter()">
+<section ng-if='admin' ng-click="showFooter()">
   <div class="bar bar-footer bar-balanced" ui-sref="addWod">
     <div class="title"><a> ADD + <a/></div>
   </div>
