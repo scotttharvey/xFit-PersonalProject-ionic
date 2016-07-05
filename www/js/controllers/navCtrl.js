@@ -1,4 +1,6 @@
 angular.module('crossfit').controller('navCtrl', function($scope) {
-    $scope.goNav = false;
-
+    $scope.goNav = true
+    $scope.togNav = function(){
+      $scope.goNav = !$scope.goNav;
+    }
 })

@@ -8,7 +8,7 @@ angular.module("crossfit").directive("navBar", function(){
     link: function(scope, element, attrs){
 
     },
-    
+
     controller: "navCtrl"
 
 

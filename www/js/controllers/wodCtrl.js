@@ -81,6 +81,8 @@ angular.module('crossfit').controller('wodCtrl', function($scope, settingsServic
   };
   $scope.closeModal = function() {
     $scope.modal.hide();
+    $scope.modalShow.hide();
+
   };
   // Cleanup the modal when we're done with it!
   $scope.$on('$destroy', function() {

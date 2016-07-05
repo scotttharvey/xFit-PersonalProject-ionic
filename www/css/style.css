@@ -20,6 +20,7 @@ margin-top: 69px;
 .list:last-child {
     margin-bottom: 46px;
 }
+
 #navi {
   position: fixed;
   top: 0;
@@ -30,7 +31,6 @@ margin-top: 69px;
 .navi img{
   height: 61px;
   width: 74px;
-  /*list-style: none;*/
   background-color: transparent;
   float: right;
   position: right relative;
@@ -60,7 +60,6 @@ margin-top: 69px;
   color: #fff;
   display: block;
   width: 100%;
-  /*transition: .2s background-color;*/
 }
 
 .navi a:hover {
@@ -87,7 +86,6 @@ margin-top: 69px;
     font-size: 1.4em;
   }
 
-  /* Option 1 - Display Inline */
   .navi li {
     display: inline-block;
     margin-right: -4px;
