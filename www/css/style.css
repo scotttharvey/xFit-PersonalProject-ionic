@@ -1,3 +1,6 @@
+.list:last-child {
+    margin-bottom: 46px;
+}
 #nav {
   position: static;
 }

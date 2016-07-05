@@ -10,6 +10,7 @@ angular.module('crossfit').controller('wodCtrl', function($scope, settingsServic
 
   $scope.getAllWods = function() {
     wodService.getAllWods().then(function(res) {
+      console.log(res.data);
       $scope.allWods = res.data;
     })
   }

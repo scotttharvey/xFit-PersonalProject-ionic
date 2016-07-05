@@ -30,16 +30,11 @@
 
       </div>
 
-      <div  ng-repeat='comments in allWods.comments track by $index'>
-        {{comments.user.username}}: {{comments.comment}}
+      <div  ng-repeat='stuff in wod.comments track by $index'>
+        {{stuff.comment}}: {{stuff.user.username}}
 
 
       </div>
-
-
-
-
-
 
 
 
@@ -57,8 +52,8 @@
 </ion-content>
 
 
-<section ng-model='admin' ng-click="showFooter()">
-  <div ng-if='admin' class="bar bar-footer bar-balanced" ui-sref="addWod">
+<section  ng-click="showFooter()">
+  <div class="bar bar-footer bar-balanced" ui-sref="addWod">
     <div class="title"><a> ADD + <a/></div>
   </div>
 </section>

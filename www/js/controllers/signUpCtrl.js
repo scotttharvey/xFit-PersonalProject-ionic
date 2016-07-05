@@ -1,4 +1,4 @@
-angular.module('crossfit').controller('signUpCtrl', function($scope, loginService, $auth, $state) {
+angular.module('crossfit').controller('signUpCtrl', function($scope, loginService, $auth, $state, $ionicPopup) {
   $scope.addNewUser = function(userObj){
     userService.addUser(userObj).then(function(res){
       console.log(res);
@@ -19,4 +19,10 @@ angular.module('crossfit').controller('signUpCtrl', function($scope, loginServic
 
        });
     }
+    $scope.showAlert = function() {
+      var alertPopup = $ionicPopup.alert({
+        title: 'Signed Up',
+        template: 'You are now signed up, {{newUser.name}}!'
+      })
+    };
 })
