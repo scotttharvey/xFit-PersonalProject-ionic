@@ -3,4 +3,7 @@ angular.module('crossfit').controller('navCtrl', function($scope) {
     $scope.togNav = function(){
       $scope.goNav = !$scope.goNav;
     }
+    $scope.resetNav = function(){
+      $scope.goNav = false;
+    }
 })
