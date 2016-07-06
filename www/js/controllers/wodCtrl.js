@@ -43,6 +43,7 @@ angular.module('crossfit').controller('wodCtrl', function($scope, settingsServic
     wodService.postComment(userId, postId, newComment).then(function(res) {
 
       wodService.getAllWods()
+      
       $scope.getAllWods();
 
     })

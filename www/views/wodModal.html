@@ -1,32 +1,85 @@
 <section ng-click="closeModal()">
-  <nav-bar><nav-bar>
+  <nav-bar>
+    <nav-bar>
 </section>
 
-  <ion-content  ng-model='admin'>
+<ion-content ng-model='admin'>
 
-<ion-modal-view class="space">
+  <ion-modal-view class="space">
 
-<div class="list card">
+    <div class="list card">
 
-  <div class="item item-avatar">
-    <h1>{{wod.name}}</h1>
-    <p class="h2 subdued">{{wod.date | date: 'EEEE'}} - {{wod.date | date: 'MMM/ d/ y'}}</p>
-  </div>
+      <div class="item item-avatar">
+        <h1>{{wod.name}}</h1>
+        <p class="h2 subdued">{{wod.date | date: 'EEEE'}} - {{wod.date | date: 'MMM/ d/ y'}}</p>
+      </div>
 
-  <div class="item item-body">
-    <p>
-      <h2 class="h2 subdued">Description</h2>
+      <div class="item item-body">
+        <p>
+          <h2 class="h2 subdued">Description</h2> {{wod.description}}
+        </p>
+      </div>
+      <div class="item item-body">
+        <p>
+          <h2 class="h2 subdued">RX</h2> {{wod.rx}}
+        </p>
+      </div>
+      <div class="item item-body">
+        <p>
+          <h2 class="h2 subdued">Warm-Up</h2> {{wod.warmup}}
+        </p>
+      </div>
+      <div class="item item-body">
+        <p>
+          <h2 class="h2 subdued">Tip</h2> {{wod.tips}}
+        </p>
+      </div>
+      <div class="item item-body">
+        <p>
+          <a href="#" class="subdued">1 like</a>
+          <a href="#" class="subdued">{{wod.comments.length}} comments</a>
+        </p>
+        <div ng-hide='custom' class="item item-input item-floating-label">
+          <span class="input-label">add comment</span>
 
-      {{wod.description}}
-    </p>
-    <p class="item">
+          <textarea ng-model="newComment" style="background-color: transparent" placeholder="add comment" type="text"></textarea>
+          <button type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" class="button button-stable">
+            Submit
+          </button>
+
+        </div>
+
+        <!-- <label class="item item-input item-floating-label" ng-hide='custom'>
+          <textarea placeholder='add comment' ng-model="newComment"></textarea>
+
+          <button class="button button-stable" type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" name="button">Submit</button>
+        </label> -->
+
+<!--
+        <div ng-hide='custom'>
+          <textarea id='customComment' placeholder='time' ng-model="storeWod"></textarea>
+
+          <button type="button" ng-click="addCurrentWod(currentUser._id, wod._id, storeWod)" name="button">Submit</button>
+
+        </div> -->
+
+        <div ng-repeat='stuff in wod.comments track by $index'>
+          <h2>{{stuff.user.username}}</h2>
+          - {{stuff.comment}}
+        </div>
+
+      </div>
+      <!-- <div class="">
+        <p class="item item-body">
       <h2 class="h2 subdued">RX</h2>
-
       {{wod.rx}}
     </p>
-    <p class="item">
+    <p class="item item-body">
+      <h2 class="h2 subdued">Warm-Up</h2>
+      {{wod.warmup}}
+    </p>
+    <p class="item item-body">
       <h2 class="h2 subdued">Tip</h2>
-
       {{wod.tip}}
     </p>
     <p>
@@ -36,8 +89,10 @@
   </div>
 
 </div>
-
-{{wod.name}}
+      {{wod.tip}}
+            {{wod.rx}}
+                  {{wod.warmup}} -->
+      <!-- {{wod.name}}
 {{wod.description}}
 <h2 class="title h2">{{wod.date | date: 'EEEE'}} - {{wod.date | date: 'MMM/ d/ y'}}</h2>{{wod.rx}}
 {{wod.tip}}
@@ -56,7 +111,7 @@
 
 <div  ng-repeat='stuff in wod.comments track by $index'>
   {{stuff.comment}}: {{stuff.user.username}}
-</div>
+</div> -->
 
-</ion-modal-view>
+  </ion-modal-view>
 </ion-content>
