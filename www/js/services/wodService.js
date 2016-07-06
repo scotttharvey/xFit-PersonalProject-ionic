@@ -26,6 +26,17 @@ angular.module("crossfit").service('wodService', function($http){
    }
  })
 },
+this.addLike = function (userId, postId, newLike) {
+return $http({
+ method: "POST",
+ url: "/api/wod/like/",
+ data: {
+   postId: postId,
+   userId: userId,
+   newLike: newLike
+ }
+})
+},
 this.deleteComment = function(id, daily) {
       return $http({
           method: 'DELETE',

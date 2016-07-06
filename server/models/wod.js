@@ -26,6 +26,10 @@ var wodSchema = new Schema({
   comments: [{
     comment: String,
     user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
+  }],
+  likes: [{
+    like: String,
+    user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
 }]
 }, {timestamps: true})
 
