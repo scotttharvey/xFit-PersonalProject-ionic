@@ -17,7 +17,7 @@ body{
   color: white;
 }
 .item-complex{
-  background-color:  grey;
+  background-color:  transparent;
 
 }
 .button icon ion-gear-a{
@@ -31,7 +31,7 @@ body{
   color: white;
 }
 .wodList .item-content{
-  background-color: grey;
+  background-color: transparent;
 }
 
 .c-hamburger {
