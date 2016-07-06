@@ -39,6 +39,14 @@
           <a href="#" class="subdued">{{wod.likes.length}} Likes</a>
           <a href="#" class="subdued">{{wod.comments.length}} Comments</a>
         </p>
+
+                <div ng-repeat='stuff in wod.comments track by $index'>
+                  <h2>{{stuff.user.username}}</h2>
+                  - {{stuff.comment}}
+                </div>
+
+              </div>
+              
         <div ng-hide='custom' class="item item-input item-floating-label">
           <span class="input-label">add comment</span>
 
@@ -66,12 +74,6 @@
 
         </div> -->
 
-        <div ng-repeat='stuff in wod.comments track by $index'>
-          <h2>{{stuff.user.username}}</h2>
-          - {{stuff.comment}}
-        </div>
-
-      </div>
       <!-- <div class="">
         <p class="item item-body">
       <h2 class="h2 subdued">RX</h2>

@@ -42,18 +42,15 @@ angular.module('crossfit').controller('wodCtrl', function($scope, settingsServic
   $scope.postComment = function(userId, postId, newComment, showIndex) {
     wodService.postComment(userId, postId, newComment).then(function(res) {
 
-      wodService.getAllWods()
-
-      $scope.getAllWods();
+    $scope.wod.comments = res.data
 
     })
   }
   $scope.postLike = function(userId, postId, newLike, showIndex) {
     wodService.addLike(userId, postId, newLike).then(function(res) {
+console.log(res);
+      $scope.wod.likes = res.data.likes
 
-      wodService.getAllWods()
-
-      $scope.getAllWods();
 
     })
   }

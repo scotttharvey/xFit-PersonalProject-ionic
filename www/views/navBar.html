@@ -2,14 +2,26 @@
   <div class="navi" id="navi">
 
 
-    <ul> <li>
-      <button ng-click='togNav()' class="c-hamburger c-hamburger--htx">
-        <span>toggle menu</span>
-      </button>
-      <button ng-hide="goNav" ui-sref='settings' class="button icon ion-gear-a"></button>
+    <ul>
+<div class="">
+  <button ng-click='togNav()' class="button icon c-hamburger c-hamburger--htx">
+    <span>toggle menu</span>
+  </button>
+
+  <li class="settingNav">
+    BoxWod
+
+  <button ng-hide="goNav" ui-sref='settings' class="button icon ion-gear-a"></button>
+
 </li>
-      <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="wod">WOD</a></li>
-      <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="home">Home</a></li>
-      <li ng-click="togNav()" ng-hide="goNav"> <a ui-sref="user">Profile</a></li>
+
+</div>
+
+<div class="">
+  <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="wod">WOD</a></li>
+  <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="home">Home</a></li>
+  <li ng-click="togNav()" ng-hide="goNav"> <a ui-sref="user">Profile</a></li>
+
+</div>
     </ul>
   </div>

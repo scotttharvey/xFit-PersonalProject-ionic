@@ -10,9 +10,9 @@
   <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
 
-    <ion-item ng-click="editWod(wod._id); openModal(wod)" ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left">
+    <ion-item ng-click="editWod(wod._id); openModal(wod)" ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left wodList">
       <!-- <img ng-src="{{item.img}}"> -->
-      <div>
+      <div class="wodText">
         <h2 class="title h2">{{wod.date | date: 'EEEE'}} - {{wod.date | date: 'MMM/ d/ y'}}</h2>
         <h1 class="title">{{wod.name}}</h1>
       </div>
