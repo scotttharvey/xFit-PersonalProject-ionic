@@ -34,30 +34,29 @@ angular.module('crossfit').controller('wodCtrl', function($scope, settingsServic
 
   }
   $scope.addCurrentWod = function(userId, postId, newComment, showIndex) {
-      wodService.addCurrentWod(userId, postId, newComment).then(function(res) {
-          wodService.getAllWods()
-          $scope.getAllWods();
-      })
-  }
-  $scope.postComment = function(userId, postId, newComment, showIndex) {
-    wodService.postComment(userId, postId, newComment).then(function(res) {
-
-    $scope.wod.comments = res.data
+    wodService.addCurrentWod(userId, postId, newComment).then(function(res) {
+      wodService.getAllWods()
 
     })
   }
+  $scope.postComment = function(userId, postId, newComment, username, showIndex) {
+    wodService.postComment(userId, postId, newComment, username).then(function(res){
+        $scope.wod.comments = res.data.comments;
+            $scope.getAllWods();
+    })
+
+  }
   $scope.postLike = function(userId, postId, newLike, showIndex) {
     wodService.addLike(userId, postId, newLike).then(function(res) {
-console.log(res);
+      console.log(res);
       $scope.wod.likes = res.data.likes
 
 
     })
   }
 
-  $scope.deleteComment = function(id, dailyId) {
-    wodService.deleteComment(id, dailyId);
-    wodService.getAllWods()
+  $scope.deleteComment = function(id) {
+    wodService.deleteComment(id);
     $scope.getAllWods();
   }
 

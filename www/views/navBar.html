@@ -3,21 +3,21 @@
 
 
     <ul>
-<div class="">
-  <button ng-click='togNav()' class="button icon c-hamburger c-hamburger--htx">
-    <span>toggle menu</span>
-  </button>
 
-  <li class="settingNav">
+
+<div class="">
+  <li >
+    <div class="">
+      <button ng-click='togNav()' class="button icon c-hamburger c-hamburger--htx float-left">
+        <span>toggle menu</span>
+      </button>
+    </div>
+
     BoxWod
 
-  <button ng-hide="goNav" ui-sref='settings' class="button icon ion-gear-a"></button>
+  <span ng-hide="goNav" ui-sref='settings' class="button icon ion-gear-a settingsMove"></span>
 
 </li>
-
-</div>
-
-<div class="">
   <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="wod">WOD</a></li>
   <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="home">Home</a></li>
   <li ng-click="togNav()" ng-hide="goNav"> <a ui-sref="user">Profile</a></li>

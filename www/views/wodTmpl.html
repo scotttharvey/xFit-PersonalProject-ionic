@@ -17,27 +17,6 @@
         <h1 class="title">{{wod.name}}</h1>
       </div>
 
-
-      <!-- <div ng-hide='custom'>
-        <textarea placeholder='add comment' ng-model="newComment"></textarea>
-
-        <button type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" name="button">Submit</button>
-      </div>
-      <div ng-hide='custom'>
-        <textarea id='customComment' placeholder='time' ng-model="storeWod"></textarea>
-
-        <button type="button" ng-click="addCurrentWod(currentUser._id, wod._id, storeWod)" name="button">Submit</button>
-
-      </div>
-
-      <div  ng-repeat='stuff in wod.comments track by $index'>
-        {{stuff.comment}}: {{stuff.user.username}}
-
-
-      </div> -->
-
-
-
       <ion-option-button class="button-positive" ng-model="admin " ng-click="removeWod(wod._id); removeAlert(wod.name)">
         Remove
       </ion-option-button>

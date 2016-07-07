@@ -60,6 +60,7 @@ function createJWT(user) {
            return res.status(409).send({ message: 'Email is already taken' });
          }
          var user = new User({
+           name: req.body.name,
            username: req.body.username,
            email: req.body.email,
            password: req.body.password
@@ -94,7 +95,7 @@ function createJWT(user) {
      req.user = payload.sub;
      next();
  },
- 
+
  addExistingWod: function(req, res, next) {
    User.findById(req.body.userId, function(err, resp){
 

@@ -37,10 +37,10 @@ return $http({
  }
 })
 },
-this.deleteComment = function(id, daily) {
+this.deleteComment = function(id) {
       return $http({
           method: 'DELETE',
-          url: 'api/wod/' + id +'/'+ daily
+          url: 'api/wod/comment/' + id 
       })
     },
 this.addCurrentWod = function (userId, postId, theWod) {

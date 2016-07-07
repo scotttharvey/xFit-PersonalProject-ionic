@@ -2,8 +2,17 @@
   <nav-bar><nav-bar>
 </section>
 <ion-content class="space">
+  <div class="user-top">
+    <button ui-sref='settings' id='my-button' class="button icon ion-gear-a"></button>
+    <img src="./img/lindsay.png" class="user-pic" />
+    <button ui-sref='settings' id='my-button' class="button icon ion-android-mail"></button>
 
-<h1>{{currentUser.username}}</h1>
+  </div>
+  <div class="show-name">
+    <h3>{{currentUser.name}}</h3>
+    @{{currentUser.username}}
+  </div>
+
 
 <div class="list">
   <label class="item item-input">
@@ -20,11 +29,11 @@
 
 
 
-<button class="button button-clear button-positive" type="button" name="button" ng-click="addNewUser(user)">
+<button class="button button-positive" type="button" name="button" ng-click="addNewUser(user)">
 Add
 </button>
 
-<button class="button button-clear button-positive" type="button" name="button" ng-click="getUsers(user)">
+<button class="button button-positive" type="button" name="button" ng-click="getUsers(user)">
   Get Users
 </button>
 </ion-content>

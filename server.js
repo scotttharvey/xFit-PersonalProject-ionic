@@ -37,7 +37,8 @@ app.put("/api/wod/:id", wodCtrl.editWod)
 app.delete("/api/wod/:id", wodCtrl.deleteWod)
 app.post('/api/wod/comment/', wodCtrl.addComment);
 app.post('/api/wod/like/', wodCtrl.addLike);
-app.delete('/api/wod/comment/:id/:status', wodCtrl.deleteComment);
+app.delete('/api/wod/comment/:id  ', wodCtrl.deleteComment);
+// app.delete('/api/wod/comment/:id/:status', wodCtrl.deleteComment);
 
 
 app.get("/api/box", boxCtrl.getAllBoxes)

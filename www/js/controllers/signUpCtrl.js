@@ -1,4 +1,4 @@
-angular.module('crossfit').controller('signUpCtrl', function($scope, loginService, $auth, $state, $ionicPopup) {
+angular.module('crossfit').controller('signUpCtrl', function($scope, userService, loginService, $auth, $state, $ionicPopup) {
   $scope.addNewUser = function(userObj){
     userService.addUser(userObj).then(function(res){
       console.log(res);

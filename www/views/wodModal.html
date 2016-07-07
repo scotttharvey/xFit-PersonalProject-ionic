@@ -39,19 +39,25 @@
           <a href="#" class="subdued">{{wod.likes.length}} Likes</a>
           <a href="#" class="subdued">{{wod.comments.length}} Comments</a>
         </p>
+          <ion-list>
+                <ion-item ng-repeat='stuff in wod.comments track by $index' show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
-                <div ng-repeat='stuff in wod.comments track by $index'>
                   <h2>{{stuff.user.username}}</h2>
-                  - {{stuff.comment}}
-                </div>
+                  <h3>- {{stuff.comment}}</h3>
 
-              </div>
-              
+
+
+              <ion-option-button class="button-positive" ng-model="admin " ng-click="deleteComment(stuff._id); removeAlert(stuff.comment)">
+                Remove
+              </ion-option-button>
+
+            </ion-item>
+
         <div ng-hide='custom' class="item item-input item-floating-label">
-          <span class="input-label">add comment</span>
+          <span class="input-label subdued" >Post a comment...</span>
 
           <textarea ng-model="newComment" style="background-color: transparent" placeholder="add comment" type="text"></textarea>
-          <button type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" class="button button-stable">
+          <button type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" class="button button-calm">
             Submit
           </button>
           <button type="button" ng-click="postLike(currentUser._id, wod._id, newLike)" class="button button-stable">
@@ -60,63 +66,8 @@
 
         </div>
 
-        <!-- <label class="item item-input item-floating-label" ng-hide='custom'>
-          <textarea placeholder='add comment' ng-model="newComment"></textarea>
+    <ion-list>
 
-          <button class="button button-stable" type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" name="button">Submit</button>
-        </label> -->
-
-<!--
-        <div ng-hide='custom'>
-          <textarea id='customComment' placeholder='time' ng-model="storeWod"></textarea>
-
-          <button type="button" ng-click="addCurrentWod(currentUser._id, wod._id, storeWod)" name="button">Submit</button>
-
-        </div> -->
-
-      <!-- <div class="">
-        <p class="item item-body">
-      <h2 class="h2 subdued">RX</h2>
-      {{wod.rx}}
-    </p>
-    <p class="item item-body">
-      <h2 class="h2 subdued">Warm-Up</h2>
-      {{wod.warmup}}
-    </p>
-    <p class="item item-body">
-      <h2 class="h2 subdued">Tip</h2>
-      {{wod.tip}}
-    </p>
-    <p>
-      <a href="#" class="subdued">1 Like</a>
-      <a href="#" class="subdued">5 Comments</a>
-    </p>
-  </div>
-
-</div>
-      {{wod.tip}}
-            {{wod.rx}}
-                  {{wod.warmup}} -->
-      <!-- {{wod.name}}
-{{wod.description}}
-<h2 class="title h2">{{wod.date | date: 'EEEE'}} - {{wod.date | date: 'MMM/ d/ y'}}</h2>{{wod.rx}}
-{{wod.tip}}
-
-<div ng-hide='custom'>
-  <textarea placeholder='add comment' ng-model="newComment"></textarea>
-
-  <button type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" name="button">Submit</button>
-</div>
-<div ng-hide='custom'>
-  <textarea id='customComment' placeholder='time' ng-model="storeWod"></textarea>
-
-  <button type="button" ng-click="addCurrentWod(currentUser._id, wod._id, storeWod)" name="button">Submit</button>
-
-</div>
-
-<div  ng-repeat='stuff in wod.comments track by $index'>
-  {{stuff.comment}}: {{stuff.user.username}}
-</div> -->
 
   </ion-modal-view>
 </ion-content>
