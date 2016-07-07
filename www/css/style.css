@@ -1,19 +1,18 @@
 body{
-  background-color: #858e8f;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  background-image: url("../img/oceanside.JPG");
+
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
 }
 
 .ion-content{
-  background-color: #9e9e9e;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-dark.png");
+  background-image: url("../img/oceanside.JPG");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   background-color:  transparent;
 
 }
 .item-content{
-  background-color:  grey;
+  background-color:  none;
   color: white;
 }
 .item-complex{
@@ -34,8 +33,24 @@ body{
   float: right;
   margin-right: 20px;
 }
+.wodText .top-boxwod{
+  background-color: transparent;
+}
 .wodText h2, .wodText h1{
   color: white;
+   text-shadow:
+   -.25px -.25px 0 #000,
+   .25px -.25px 0 #000,
+   -.25px .25px 0 #000,
+   .25px .25px 0 #000;
+}
+.wodText h1{
+  color: white;
+   text-shadow:
+   -.25px -.25px 0 #000,
+   .25px -.25px 0 #000,
+   -.25px .25px 0 #000,
+   .25px .25px 0 #000;
 }
 .wodList .item-content{
   background-color: transparent;
@@ -174,6 +189,33 @@ margin-top: 69px;
   height: 70px;
   margin-left: 60px;
 }
+.pr-box{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+}
+.pr-show{
+  width: 140px;
+  height: 70px;
+  border: solid white 1px;
+  border-bottom: none;
+  border-left: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.pr-show .right{
+  border-right: none;
+}
+.white-text h3{
+  color: white;
+}
+.white-text{
+  color: white;
+}
 .user-pic{
   height: 100px;
   width: 100px;
@@ -205,7 +247,7 @@ background-color: transparent;
 }
 .navi ul {
   list-style: none;
-  background-color: rgba(90, 95, 107, 0.95);
+  background-color: rgba(255, 176, 106, 0.95);
   text-align: center;
   padding: 0;
   margin: 0;
@@ -222,7 +264,7 @@ background-color: transparent;
   font-size: 2.1em;
   line-height: 40px;
   height: 69px;
-  border-bottom: 1px solid #888;
+  border-bottom: .5px solid grey;
 }
 
 .navi a {
