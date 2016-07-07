@@ -1,4 +1,4 @@
-angular.module('crossfit').controller('userCtrl', function($scope, settingsService, userService, $ionicModal, $ionicPopup) {
+angular.module('crossfit').controller('userCtrl', function($scope, settingsService, userService, wodService, $ionicModal, $ionicPopup) {
     $scope.addNewUser = function(userObj){
       userService.addUser(userObj).then(function(res){
         console.log(res);
@@ -24,5 +24,9 @@ angular.module('crossfit').controller('userCtrl', function($scope, settingsServi
       $scope.admin = res.data.admin
       console.log($scope.currentUser);
     })
-
+    $scope.pr = true;
+    $scope.togUserTags = function(){
+      $scope.pr = !$scope.pr;
+    
+    }
 })

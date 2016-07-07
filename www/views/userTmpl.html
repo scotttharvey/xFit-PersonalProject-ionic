@@ -5,24 +5,78 @@
   <div class="user-top">
     <button ui-sref='settings' id='my-button' class="button icon ion-gear-a"></button>
     <img src="./img/lindsay.png" class="user-pic" />
-    <button ui-sref='settings' id='my-button' class="button icon ion-android-mail"></button>
+    <a href="mailto:{{currentUser.email}}?Subject=Hello%20There" target="_top">
+    <button id='my-button' class="button icon ion-android-mail">
+    </button>
+    </a>
 
   </div>
   <div class="show-name white-text">
     <h3>{{currentUser.name}}</h3>
     @{{currentUser.username}}
   </div>
-<div class="pr-box">
+<section class="pr-box"  ng-click=(togUserTags()) >
 <div class="pr-show white-text">
-  <h3>Stuff</h3>
-</div>
-<div class="pr-show white-text">
-  <h3>Things</h3>
+  <h3>About</h3>
 </div>
 <div class="pr-show white-text">
-  <h3>Junk</h3>
+  <h3>PR's</h3>
 </div>
+<div class="pr-show white-text">
+  <h3>Following</h3>
 </div>
+</section>
+
+<section ng-hide='pr'>
+  <ul class="list">
+      <li class="item">
+      <h2>Back Squat</h2>
+      {{currentUser.prs[0].backsquat}} lb -{{currentUser.date | date: 'MMM /d /y'}}
+      </li>
+      <li class="item">
+      <h2>Front Squat</h2>
+        {{currentUser.prs[0].frontsquat}} lb -{{currentUser.date | date: 'MMM /d /y'}}
+      </li>
+      <li class="item">
+      <h2>Clean & Jerk</h2>
+      {{currentUser.prs[0].cleanandjerk}} lb -{{currentUser.date | date: 'MMM /d /y'}}
+      </li>
+      <li class="item">
+      <h2>Snatch</h2>
+      {{currentUser.prs[0].snatch}} lb -{{currentUser.date | date: 'MMM /d /y'}}
+      </li>
+      <li class="item">
+      <h2>Max Pullups</h2>
+      {{currentUser.prs[0].pullups}} reps -{{currentUser.date | date: 'MMM /d /y'}}
+      </li>
+      <li class="item">
+      <h2>Split Jerk</h2>
+      {{currentUser.prs[0].splitjerk}} lb -{{currentUser.date | date: 'MMM /d /y'}}
+      <li class="item">
+      <h2>Over Head Squat</h2>
+      {{currentUser.prs[0].overheadsquat}} lb -{{currentUser.date | date: 'MMM /d /y'}}
+      </li>
+      <li class="item">
+      <h2>Power Clean</h2>
+      {{currentUser.prs[0].powerclean}} lb -{{currentUser.date | date: 'MMM /d /y'}}
+      </li>
+      <li class="item">
+      <h2>Power Snatch</h2>
+      {{currentUser.prs[0].powersnatch}} lb -{{currentUser.date | date: 'MMM /d /y'}}
+      </li>
+      </li>
+  </ul>
+
+
+</section>
+
+
+
+
+
+
+
+
 
 <div class="list">
   <label class="item item-input">

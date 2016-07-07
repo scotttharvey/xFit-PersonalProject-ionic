@@ -6,21 +6,6 @@ var wodSchema = new Schema({
   description: {type: String, required: true},
   warmup: {type: String, required: false},
   rx: {type: String},
-  prs:[{
-    backsquat: String,
-    frontsquat: String,
-    cleanandjerk: String,
-    snatch: String,
-    pullups: String,
-    doubleunders: String,
-    splitjerk: String,
-    shoulderpress: String,
-    overheadsquat: String,
-    handstandpushups: String,
-    row: String,
-    powerclean: String,
-    powersnatch: String
-  }],
   date: {type: Date, default: Date.now},
   tips: {type: String},
   comments: [{

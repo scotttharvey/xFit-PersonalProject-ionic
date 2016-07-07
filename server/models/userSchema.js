@@ -10,6 +10,21 @@ var userSchema = new Schema({
   number: {type: Number, required: false},
   date: {type: Date, default: Date.now},
   about: {type: String, required: false},
+  prs:[{
+    backsquat: Number,
+    frontsquat: Number,
+    cleanandjerk: Number,
+    snatch: Number,
+    pullups: Number,
+    doubleunders: Number,
+    splitjerk: Number,
+    shoulderpress: Number,
+    overheadsquat: Number,
+    handstandpushups: Number,
+    row: Number,
+    powerclean: Number,
+    powersnatch: Number
+  }],
   admin: {type: Boolean, default: false, required: true},
   wods:[{time:String,
   wod:{type: mongoose.Schema.Types.ObjectId, ref: 'Wod'}
