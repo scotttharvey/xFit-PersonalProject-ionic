@@ -25,6 +25,7 @@ var userSchema = new Schema({
     powerclean: Number,
     powersnatch: Number
   }],
+  followers: [],
   admin: {type: Boolean, default: false, required: true},
   wods:[{time:String,
   wod:{type: mongoose.Schema.Types.ObjectId, ref: 'Wod'}

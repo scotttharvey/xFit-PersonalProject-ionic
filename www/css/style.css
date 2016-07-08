@@ -24,6 +24,20 @@ body{
   min-width: 30px;
   min-height: 30px;
 }
+.moveTheDamnBurger{
+
+  position: absolute;
+  top: 0;
+  left:0;
+}
+.stayTheFHere{
+
+  position: absolute;
+  top: 10px;
+  left: 35%;
+
+}
+
 .closeComment{
   min-width: 30px;
   min-height: 30px;
@@ -155,7 +169,10 @@ transform: rotate(-45deg);
 transition-delay: 0s, 0.3s;
 }
 .settingsMove{
-  margin-left: 40px;
+  position: absolute;
+  right:0;
+  top: 13px;
+  margin-right: 5px;
 }
 
 .h2{

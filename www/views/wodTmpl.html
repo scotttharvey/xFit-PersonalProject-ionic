@@ -1,18 +1,18 @@
 
-  <section>
-    <nav-bar>
+  <section ng-click='closeWodModal(); closeModal()'>
+    <nav-bar  >
     </nav-bar>
   </section>
 
 <ion-content class="space" >
 
 
-  <ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+  <ion-list can-swipe="listCanSwipe" show-delete="shouldShowDelete" show-reorder="shouldShowReorder" >
 
 
-    <ion-item ng-model="admin" ng-click="editWod(wod._id); openModal(wod)" ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left wodList">
+    <ion-item ng-model="admin"  ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left wodList">
       <!-- <img ng-src="{{item.img}}"> -->
-      <div class="wodText">
+      <div ng-click="editWod(wod._id); openWodModal(wod);" class="wodText">
         <h3 >{{wod.date | date: 'EEEE'}} - {{wod.date | date: 'MMM/ d/ y'}}</h3>
         <h1 >{{wod.name}}</h1>
       </div>

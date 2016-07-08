@@ -73,20 +73,27 @@ angular.module('crossfit').controller('wodCtrl', function($scope, settingsServic
   }).then(function(modal) {
     $scope.modal = modal;
   });
+  $scope.openModal = function(wod) {
+    $scope.wod = wod;
+    $scope.modal.show();
+  };
+
   $ionicModal.fromTemplateUrl('./views/wodModal.html', {
     scope: $scope,
     animation: 'slide-in-up'
   }).then(function(modal) {
     $scope.modalShow = modal;
   });
-  $scope.openModal = function(wod) {
+  $scope.openWodModal = function(wod) {
     $scope.wod = wod;
-    $scope.modal.show();
     $scope.modalShow.show();
-
   };
+
   $scope.closeModal = function() {
     $scope.modal.hide();
+
+  };
+  $scope.closeWodModal = function() {
     $scope.modalShow.hide();
 
   };

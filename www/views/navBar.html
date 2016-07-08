@@ -1,29 +1,29 @@
-
-  <div class="navi" id="navi">
-
-
-    <ul>
+<div class="navi" id="navi">
 
 
-<div class="wodText">
-  <li class="top-boxwod">
-    <div >
-      <button ng-click='togNav()' class="button icon c-hamburger c-hamburger--htx float-left">
-        <span>toggle menu</span>
-      </button>
-    </div>
-    <div>
+  <ul>
+
+
+    <div class="wodText">
+      <li class="top-boxwod" ng-click='togNav()'>
+        <div class="moveTheDamnBurger">
+          <button class="button icon c-hamburger c-hamburger--htx float-left">
+            <span>toggle menu</span>
+          </button>
+        </div>
+        <div class = "stayTheFHere">
           <h1>BoxWod</h1>
+        </div>
+
+        <div>
+          <span ng-hide="goNav" ui-sref='settings' class="button icon ion-gear-a settingsMove"></span>
+        </div>
+
+      </li>
+      <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="wod"><h1>WOD</h1></a></li>
+      <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="home"><h1>Home</h1></a></li>
+      <li ng-click="togNav()" ng-hide="goNav"> <a ui-sref="user"><h1>Profile</h1></a></li>
+
     </div>
-
-
-  <span ng-hide="goNav" ui-sref='settings' class="button icon ion-gear-a settingsMove"></span>
-
-</li>
-  <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="wod"><h1>WOD</h1></a></li>
-  <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="home"><h1>Home</h1></a></li>
-  <li ng-click="togNav()" ng-hide="goNav"> <a ui-sref="user"><h1>Profile</h1></a></li>
-
+  </ul>
 </div>
-    </ul>
-  </div>

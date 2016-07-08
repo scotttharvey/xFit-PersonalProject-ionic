@@ -1,4 +1,4 @@
-angular.module('crossfit').controller('userCtrl', function($scope, settingsService, userService, wodService, $ionicModal, $ionicPopup) {
+angular.module('crossfit').controller('userCtrl', function($scope, homeService, settingsService, userService, wodService, $ionicModal, $ionicPopup) {
     $scope.addNewUser = function(userObj){
       userService.addUser(userObj).then(function(res){
         console.log(res);
@@ -18,6 +18,12 @@ angular.module('crossfit').controller('userCtrl', function($scope, settingsServi
         }
       })
     },
+    $scope.showUsers = function() {
+      homeService.getAllUsers().then(function(res) {
+        $scope.Users = res.data;
+      })
+    }
+    $scope.showUsers();
 
     settingsService.getCurrentUser().then(function(res){
       $scope.currentUser = res.data
@@ -25,8 +31,15 @@ angular.module('crossfit').controller('userCtrl', function($scope, settingsServi
       console.log($scope.currentUser);
     })
     $scope.pr = true;
-    $scope.togUserTags = function(){
+    $scope.togPR = function(){
       $scope.pr = !$scope.pr;
-    
+    }
+    $scope.aboutTab = true;
+    $scope.togAbout = function(){
+      $scope.aboutTab = !$scope.aboutTab;
+    }
+    $scope.followers = true;
+    $scope.togFollowers = function(){
+      $scope.followers = !$scope.followers;
     }
 })

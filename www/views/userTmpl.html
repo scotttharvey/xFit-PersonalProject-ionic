@@ -15,19 +15,26 @@
     <h3>{{currentUser.name}}</h3>
     @{{currentUser.username}}
   </div>
-<section class="pr-box"  ng-click=(togUserTags()) >
-<div class="pr-show white-text">
+<section class="pr-box"   >
+<div ng-click='togAbout()' class="pr-show white-text">
   <h3>About</h3>
 </div>
-<div class="pr-show white-text">
+<div ng-click='togPR()' class="pr-show white-text">
   <h3>PR's</h3>
 </div>
-<div class="pr-show white-text">
+<div  ng-click='togFollowers()' class="pr-show white-text">
   <h3>Following</h3>
 </div>
 </section>
+<section>
+  <div class="card" ng-hide="aboutTab">
+    <div class="item item-text-wrap">
+    Cray poutine gluten-free, cardigan craft beer ramps celiac skateboard man braid franzen tofu. Ugh knausgaard polaroid tilde kickstarter, offal sustainable four dollar toast umami hammock shoreditch mustache wolf disrupt meh. Fanny pack intelligentsia portland, skateboard messenger bag tacos neutra drinking vinegar cornhole swag. Fap ramps cold-pressed pitchfork, heirloom etsy leggings listicle. Forage 8-bit mlkshk, distillery pug tumblr craft beer pour-over pabst beard austin swag man braid dreamcatcher put a bird on it. Schlitz small batch etsy kinfolk godard sartorial, whatever twee. Polaroid celiac echo park DIY, flexitarian pour-over poutine ugh crucifix thundercats disrupt hashtag iPhone flannel art party.
+    </div>
+  </div>
 
-<section ng-hide='pr'>
+</section>
+<section ng-show='pr'>
   <ul class="list">
       <li class="item">
       <h2>Back Squat</h2>
@@ -70,10 +77,30 @@
 
 </section>
 
+<ion-list ng-hide='followers' show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+
+  <ion-item  ng-repeat="user in Users | filter:search |orderBy:'_id' as filtered_result track by user._id"  class="item item-avatar item-thumbnail-left" >
+
+<img src="./img/lindsay.png">
+<h1 class="title">{{user.username}}</h1>
+
+  <h2 >{{user.name}}</h2>
+{{user}}
 
 
+<section ng-if"admin">
+  <ion-option-button class="button-positive"  ng-click="removeUser(user._id); showAlert()">
+    Remove
+  </ion-option-button>
 
 
+</section>
+
+</ion-item>
+<div class="" ng-show="filtered_result.length == 0">
+No results found
+</div>
+</ion-list>
 
 
 
