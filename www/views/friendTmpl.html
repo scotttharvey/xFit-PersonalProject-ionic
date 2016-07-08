@@ -2,18 +2,20 @@
   <nav-bar><nav-bar>
 </section>
 <ion-content class="space">
+  <a ui-sref="user"class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
   <div class="user-top">
     <button ui-sref='settings' id='my-button' class="button icon ion-gear-a"></button>
     <img src="./img/lindsay.png" class="user-pic" />
-    <a href="mailto:{{currentUser.email}}?Subject=Hello%20There" target="_top">
+    <a href="mailto:{{friend.email}}?Subject=Hello%20There" target="_top">
     <button id='my-button' class="button icon ion-android-mail">
     </button>
     </a>
 
   </div>
   <div class="show-name white-text">
-    <h3>{{currentUser.name}}</h3>
-    @{{currentUser.username}}
+    <h3>{{friend.name}}</h3>
+    @{{friend.username}}
+
   </div>
 <section class="pr-box"   >
 <div ng-click='about()' class="pr-show white-text">
@@ -27,63 +29,59 @@
 </div>
 </section>
 <section>
-  <div class="card"  ng-hide="aboutTab">
+  <div class="card" ng-hide="aboutTab">
     <div class="item item-text-wrap">
     Cray poutine gluten-free, cardigan craft beer ramps celiac skateboard man braid franzen tofu. Ugh knausgaard polaroid tilde kickstarter, offal sustainable four dollar toast umami hammock shoreditch mustache wolf disrupt meh. Fanny pack intelligentsia portland, skateboard messenger bag tacos neutra drinking vinegar cornhole swag. Fap ramps cold-pressed pitchfork, heirloom etsy leggings listicle. Forage 8-bit mlkshk, distillery pug tumblr craft beer pour-over pabst beard austin swag man braid dreamcatcher put a bird on it. Schlitz small batch etsy kinfolk godard sartorial, whatever twee. Polaroid celiac echo park DIY, flexitarian pour-over poutine ugh crucifix thundercats disrupt hashtag iPhone flannel art party.
     </div>
   </div>
 
 </section>
-<section  ng-hide='prHidden'>
+<section ng-hide='prHidden'>
   <ul class="list">
-      <li class="item">
-      <h2>Back Squat - {{currentUser.prs[0].backsquat}}lb </h2>
+    <li class="item">
+    <h2>Back Squat - {{currentUser.prs[0].backsquat}}lb </h2>
+    {{currentUser.date | date: 'MMM /d /y'}}
+    </li>
+    <li class="item">
+    <h2>Front Squat - {{currentUser.prs[0].frontsquat}}lb</h2>
       {{currentUser.date | date: 'MMM /d /y'}}
-      </li>
-      <li class="item">
-      <h2>Front Squat - {{currentUser.prs[0].frontsquat}}lb</h2>
-        {{currentUser.date | date: 'MMM /d /y'}}
-      </li>
-      <li class="item">
-      <h2>Clean & Jerk - {{currentUser.prs[0].cleanandjerk}}lb</h2>
-       {{currentUser.date | date: 'MMM /d /y'}}
-      </li>
-      <li class="item">
-      <h2>Snatch - {{currentUser.prs[0].snatch}}lb </h2>
-      {{currentUser.date | date: 'MMM /d /y'}}
-      </li>
-      <li class="item">
-      <h2>Max Pullups - {{currentUser.prs[0].pullups}} reps </h2>
-      {{currentUser.date | date: 'MMM /d /y'}}
-      </li>
-      <li class="item">
-      <h2>Split Jerk - {{currentUser.prs[0].splitjerk}}lb </h2>
-      {{currentUser.date | date: 'MMM /d /y'}}
-      <li class="item">
-      <h2>Over Head Squat - {{currentUser.prs[0].overheadsquat}}lb </h2>
-      {{currentUser.date | date: 'MMM /d /y'}}
-      </li>
-      <li class="item">
-      <h2>Power Clean - {{currentUser.prs[0].powerclean}}lb </h2>
-      {{currentUser.date | date: 'MMM /d /y'}}
-      </li>
-      <li class="item">
-      <h2>Power Snatch - {{currentUser.prs[0].powersnatch}}lb </h2>
-      {{currentUser.date | date: 'MMM /d /y'}}
-      </li>
-      <li class="item">
-      <a class="ion-ios-plus-outline"> &nbsp Add PR</a>
-      </li>
-      
-      </li>
+    </li>
+    <li class="item">
+    <h2>Clean & Jerk - {{currentUser.prs[0].cleanandjerk}}lb</h2>
+     {{currentUser.date | date: 'MMM /d /y'}}
+    </li>
+    <li class="item">
+    <h2>Snatch - {{currentUser.prs[0].snatch}}lb </h2>
+    {{currentUser.date | date: 'MMM /d /y'}}
+    </li>
+    <li class="item">
+    <h2>Max Pullups - {{currentUser.prs[0].pullups}} reps </h2>
+    {{currentUser.date | date: 'MMM /d /y'}}
+    </li>
+    <li class="item">
+    <h2>Split Jerk - {{currentUser.prs[0].splitjerk}}lb </h2>
+    {{currentUser.date | date: 'MMM /d /y'}}
+    <li class="item">
+    <h2>Over Head Squat - {{currentUser.prs[0].overheadsquat}}lb </h2>
+    {{currentUser.date | date: 'MMM /d /y'}}
+    </li>
+    <li class="item">
+    <h2>Power Clean - {{currentUser.prs[0].powerclean}}lb </h2>
+    {{currentUser.date | date: 'MMM /d /y'}}
+    </li>
+    <li class="item">
+    <h2>Power Snatch - {{currentUser.prs[0].powersnatch}}lb </h2>
+    {{currentUser.date | date: 'MMM /d /y'}}
+    </li>
+  </li>
   </ul>
 
 
 </section>
 
-<ion-list  ng-hide="followers" ng-repeat="user in Users | filter:search |orderBy:'_id' as filtered_result track by $index"  show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+<ion-list ng-hide='followers' show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
-  <ion-item ng-click="goFriend($index)" class="item item-avatar item-thumbnail-left" >
+  <ion-item  ng-repeat="user in Users | filter:search |orderBy:'_id' as filtered_result track by user._id"  class="item item-avatar item-thumbnail-left" >
 
 <img src="./img/lindsay.png">
 <h1 class="title">{{user.username}}</h1>

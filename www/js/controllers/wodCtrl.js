@@ -25,7 +25,6 @@ angular.module('crossfit').controller('wodCtrl', function($scope, settingsServic
   $scope.updateWod = function(wod) {
     wodService.editWod(wod);
     $scope.getAllWods();
-
   };
   $scope.removeWod = function(wod) {
 

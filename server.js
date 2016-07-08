@@ -22,6 +22,7 @@ app.use(bodyParser.json())
 app.use(cors(corsOptions))
 
 app.get("/api/user", userCtrl.getAllUsers)
+app.get("/api/user/:id", userCtrl.getUser)
 app.post("/api/user", userCtrl.addUser)
 app.put("/api/user/:id", userCtrl.updateUser)
 app.delete("/api/user/:id", userCtrl.deleteUser)

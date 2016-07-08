@@ -1,4 +1,6 @@
 angular.module("crossfit").service('userService', function($http){
+  this.friendProfile; 
+
   this.getCurrentUser = function(){
     return $http.get("http://localhost:3000/api/me").then(function(res){
       return res
@@ -7,6 +9,9 @@ angular.module("crossfit").service('userService', function($http){
   }
   this.getAllUsers = function(){
     return $http.get("http://localhost:3000/api/user")
+  },
+  this.getUser = function(user){
+    return $http.get("http://localhost:3000/api/user/" + user._id)
   },
 
   this.addUser = function(user){

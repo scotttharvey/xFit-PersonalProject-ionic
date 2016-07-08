@@ -7,7 +7,7 @@
 <ion-content class="space" >
 
 
-  <ion-list can-swipe="listCanSwipe" show-delete="shouldShowDelete" show-reorder="shouldShowReorder" >
+  <ion-list  show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
 
     <ion-item ng-model="admin"  ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left wodList">

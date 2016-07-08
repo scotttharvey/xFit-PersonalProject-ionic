@@ -1,12 +1,12 @@
 body{
-  background-image: url("../img/oceanside.JPG");
+  background-image: url("../img/signin.png");
 
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 
 }
 
 .ion-content{
-  background-image: url("../img/oceanside.JPG");
+  background-image: url("../img/signin.png");
   /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   background-color:  transparent;
 
@@ -69,7 +69,9 @@ body{
 .wodList .item-content{
   background-color: transparent;
 }
-
+.list .item h2{
+  font-size: 20px;
+}
 .c-hamburger {
 display: block;
 position: relative;
@@ -264,7 +266,7 @@ background-color: transparent;
 }
 .navi ul {
   list-style: none;
-  background-color: rgba(255, 176, 106, 0.95);
+  background-color: rgba(215, 207, 210, 0.95);
   text-align: center;
   padding: 0;
   margin: 0;

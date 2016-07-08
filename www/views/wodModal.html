@@ -1,4 +1,4 @@
-<section ng-click="closeModal()">
+<section >
   <nav-bar>
     <nav-bar>
 </section>
@@ -6,10 +6,11 @@
 <ion-content ng-model='admin'>
 
   <ion-modal-view class="space">
-
     <div class="list card">
+      <a ng-click="closeWodModal()" class="button icon-left ion-chevron-left button-clear button-dark">Back</a>
 
       <div class="item item-avatar">
+
         <h1>{{wod.name}}</h1>
         <p class="h2 subdued">{{wod.date | date: 'EEEE'}} - {{wod.date | date: 'MMM/ d/ y'}}</p>
       </div>
@@ -54,9 +55,9 @@
             </ion-item>
 
         <div ng-hide='custom' class="item item-input item-floating-label">
-          <span class="input-label subdued" >Post a comment...</span>
+          <span class="input-label subdued" >Post score...</span>
 
-          <textarea ng-model="newComment" style="background-color: transparent" placeholder="add comment" type="text"></textarea>
+          <textarea ng-model="newComment" style="background-color: transparent" placeholder="add score" type="text"></textarea>
           <button type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" class="button button-calm">
             Submit
           </button>

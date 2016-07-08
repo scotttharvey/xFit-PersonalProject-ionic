@@ -5,37 +5,33 @@
 <ion-content class="space">
 
 
-<ul class="list">
+  <button ng-click='showEdit()' class="button button-block button-calm">
+    Edit User
+  </button>
+  <section ng-hide="editMe">
+    <h3>{{currentUser.name}}</h3>
+    <div class="list">
+      <label class="item item-input item-stacked-label">
+        <span class="input-label">Edit Name</span>
+        <input ng-model="currentUser.name" style="background-color: transparent" type="text" placeholder="{{currentUser.name}}">
+      </label>
 
-  <li class="item item-toggle">
-     Admin
-     <label class="toggle toggle-assertive">
-       <input type="checkbox">
-       <div class="track">
-         <div class="handle"></div>
-       </div>
-     </label>
-  </li>
-  <li class="item item-toggle">
-     Alert
-     <label class="toggle toggle-calm">
-       <input type="checkbox">
-       <div class="track">
-         <div class="handle"></div>
-       </div>
-     </label>
-  </li>
-  <li class="item item-toggle">
-      Something
-       <label class="toggle toggle-royal">
-         <input type="checkbox">
-         <div class="track">
-           <div class="handle"></div>
-         </div>
-       </label>
-    </li>
+      <label class="item item-text-area item-stacked-label">
+        <span class="input-label">Edit Email</span>
+        <textarea ng-model="currentUser.email" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="{{currentUser.email}}"></textarea>
+      </label>
 
-</ul>
+    <label class="item item-text-area item-stacked-label">
+      <span class="input-label">Edit Password</span>
+      <textarea rows='4' cols='50' style="background-color: transparent" type="password"
+      placeholder="password">password</textarea>
+    </label>
+
+
+    <button ng-click="updateUser(currentUser); userAlert() " class="button button-block button-positive">
+      Submit Changes
+    </button>
+  </section>
 
 <button ng-click='logOut()' class="button button-block button-assertive">
   Sign Out

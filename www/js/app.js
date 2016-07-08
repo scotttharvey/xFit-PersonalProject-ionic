@@ -48,6 +48,11 @@ angular.module('crossfit', ['ionic', 'satellizer'])
         templateUrl: "../views/userTmpl.html",
         controller: "userCtrl"
       })
+      .state('friend', {
+        url: "/friend",
+        templateUrl: "../views/friendTmpl.html",
+        controller: "friendCtrl"
+      })
       .state('home', {
         url: "/home",
         templateUrl: "../views/homeTmpl.html",

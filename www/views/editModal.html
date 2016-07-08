@@ -1,3 +1,8 @@
+<section ng-click="closeModal()">
+  <nav-bar>
+    <nav-bar>
+</section>
+<ion-content>
 <ion-modal-view class="space">
   <div class="bar bar-header bar-energized">
     <div class="title">Editing Mode</div>
@@ -22,12 +27,28 @@
       <span class="input-label">Edit Description</span>
       <textarea ng-model="wod.description" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="{{wod.description}}"></textarea>
     </label>
-  </div>
 
-  <button ng-click="updateWod(wod); showAlert(); closeModal() " class="button button-block button-positive">
+  <label class="item item-text-area item-stacked-label">
+    <span class="input-label">Edit RX</span>
+    <textarea ng-model="wod.rx" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="{{wod.rx}}"></textarea>
+  </label>
+
+<label class="item item-text-area item-stacked-label">
+  <span class="input-label">Edit Warm-Up</span>
+  <textarea ng-model="wod.warmup" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="{{wod.warmup}}"></textarea>
+</label>
+
+<label class="item item-text-area item-stacked-label">
+  <span class="input-label">Edit Tips</span>
+  <textarea ng-model="wod.tips" rows='4' cols='50' style="background-color: transparent" type="text" placeholder="{{wod.tips}}"></textarea>
+</label>
+</div>
+
+  <button ng-click="updateWod(wod); showAlert(); closeModal()" class="button button-block button-positive">
     edit wod
   </button>
   <button ng-click="closeModal()" class="button button-block button-positive">
     cancel
   </button>
 </ion-modal-view>
+</ion-content>

@@ -1,4 +1,4 @@
-angular.module('crossfit').controller('settingsCtrl', function($scope, settingsService, $ionicModal, $ionicPopup, $auth, $state) {
+angular.module('crossfit').controller('settingsCtrl', function($scope, settingsService, userService, $ionicModal, $ionicPopup, $auth, $state) {
 
 $scope.logOut = function(){
   $auth.logout().then(function(res){
@@ -13,4 +13,21 @@ $scope.logOut = function(){
     $scope.admin = res.data.admin
     console.log($scope.currentUser);
   })
+  $scope.updateUser = function(obj){
+    console.log(obj);
+    userService.editUser(obj);
+    $state.go("user")
+  }
+
+  $scope.showEdit = function(){
+    $scope.editMe = !$scope.editMe
+  }
+  $scope.editMe = true;
+
+  $scope.userAlert = function() {
+  var alertPopup = $ionicPopup.alert({
+    title: 'Profile Edited',
+    template: 'Profile Edited Successfully'
+  })
+};
 })
