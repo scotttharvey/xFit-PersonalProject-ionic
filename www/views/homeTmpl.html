@@ -11,9 +11,9 @@
 
 </label>
 
-<ion-list show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+<ion-list ng-if='search' ng-repeat="user in allUsers | filter:search |orderBy:'name' as filtered_result track by $index" show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
-  <ion-item ng-if='search' ng-repeat="user in allUsers | filter:search |orderBy:'_id' as filtered_result track by user._id"  class="item item-avatar item-thumbnail-left" >
+  <ion-item  ng-click="goFriend($index)" class="item item-avatar item-thumbnail-left" >
 
 <img src="./img/lindsay.png">
 <h1 class="title">{{user.username}}</h1>

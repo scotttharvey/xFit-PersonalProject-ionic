@@ -1,4 +1,4 @@
-angular.module('crossfit').controller('homeCtrl', function($scope, userService, homeService, $ionicPopup) {
+angular.module('crossfit').controller('homeCtrl', function($scope, $state, userService, homeService, $ionicPopup) {
  console.log("Home CTrl");
 
  $scope.getAllUsers = function() {
@@ -23,6 +23,14 @@ angular.module('crossfit').controller('homeCtrl', function($scope, userService, 
  $scope.shouldShowDelete = false;
  $scope.shouldShowReorder = false;
  $scope.listCanSwipe = true;
+
+ $scope.goFriend = function(i){
+   userService.friendProfile = $scope.Users[i];
+   console.log(i);
+   $state.go('friend')
+ }
+
+
 })
 
 //

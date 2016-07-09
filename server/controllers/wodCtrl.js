@@ -57,9 +57,10 @@ module.exports = {
    },
    deleteComment: function(req, res, next) {
          var id = req.params.id;
-         Status.findByIdAndRemove(id, function(err, response) {
-             err ? res.status(500).send(err) : res.status(200).send(response)
-         })
+         var status = req.params.status
+         Wod.findByIdAndUpdate(status, {$pull: {comments: {_id: id}}}, function(err, response) {
+          err ? res.status(500).send(err) : res.status(200).send(response)
+      })
      },
   addLike: function(req, res, next) {
      Wod.findById(req.body.postId, function(err, post){

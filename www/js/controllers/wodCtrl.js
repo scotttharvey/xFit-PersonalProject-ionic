@@ -10,7 +10,6 @@ angular.module('crossfit').controller('wodCtrl', function($scope, settingsServic
 
   $scope.getAllWods = function() {
     wodService.getAllWods().then(function(res) {
-      console.log(res.data);
       $scope.allWods = res.data;
     })
   }
@@ -54,8 +53,8 @@ angular.module('crossfit').controller('wodCtrl', function($scope, settingsServic
     })
   }
 
-  $scope.deleteComment = function(id) {
-    wodService.deleteComment(id);
+  $scope.deleteComment = function(userId, commentId) {
+    wodService.deleteComment(userId, commentId);
     $scope.getAllWods();
   }
 

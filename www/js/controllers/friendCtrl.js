@@ -1,4 +1,4 @@
-angular.module('crossfit').controller('friendCtrl', function($scope, userService, homeService, settingsService) {
+angular.module('crossfit').controller('friendCtrl', function($scope, $state, userService, homeService, settingsService) {
   $scope.getUsers = function(userObj){
     userService.getAllUsers(userObj).then(function(res){
       if(res.status === 200){
@@ -17,6 +17,11 @@ angular.module('crossfit').controller('friendCtrl', function($scope, userService
     homeService.getAllUsers().then(function(res) {
       $scope.Users = res.data;
     })
+  }
+  $scope.goFriend = function(i){
+    userService.friendProfile = $scope.Users[i];
+    console.log($scope.Users[i]);
+    $state.go('friend')
   }
   $scope.showUsers();
   settingsService.getCurrentUser().then(function(res){

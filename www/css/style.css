@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Quicksand);
+
 body{
   background-image: url("../img/signin.png");
 
@@ -14,6 +16,7 @@ body{
 .item-content{
   background-color:  none;
   color: white;
+  font-family: 'Quicksand', sans-serif;
 }
 .item-complex{
   background-color:  transparent;
@@ -37,7 +40,18 @@ body{
   left: 35%;
 
 }
+.all-wods-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("../img/saracover.jpg");
+  background-position: 60% 45%;
+}
+.all-wods-header h1, h2{
+  color: white;
+  font-family: 'Quicksand', sans-serif;
 
+}
 .closeComment{
   min-width: 30px;
   min-height: 30px;
@@ -52,19 +66,21 @@ body{
 }
 .wodText h2, .wodText h1{
   color: white;
-   text-shadow:
+   /*text-shadow:
    -.25px -.25px 0 #000,
    .25px -.25px 0 #000,
    -.25px .25px 0 #000,
-   .25px .25px 0 #000;
+   .25px .25px 0 #000;*/
+   font-family: 'Quicksand', sans-serif;
 }
 .wodText h1{
   color: white;
-   text-shadow:
+   /*text-shadow:
    -.25px -.25px 0 #000,
    .25px -.25px 0 #000,
    -.25px .25px 0 #000,
-   .25px .25px 0 #000;
+   .25px .25px 0 #000;*/
+   font-family: 'Quicksand', sans-serif;
 }
 .wodList .item-content{
   background-color: transparent;
@@ -231,9 +247,11 @@ margin-top: 69px;
 }
 .white-text h3{
   color: white;
+  font-family: 'Quicksand', sans-serif;
 }
 .white-text{
   color: white;
+  font-family: 'Quicksand', sans-serif;
 }
 .user-pic{
   height: 100px;
@@ -266,7 +284,7 @@ background-color: transparent;
 }
 .navi ul {
   list-style: none;
-  background-color: rgba(215, 207, 210, 0.95);
+  background-color: rgba(78, 88, 98, 0.96);
   text-align: center;
   padding: 0;
   margin: 0;
