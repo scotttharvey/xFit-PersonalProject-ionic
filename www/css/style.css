@@ -45,7 +45,7 @@ body{
   align-items: center;
   justify-content: center;
   background-image: url("../img/saracover.jpg");
-  background-position: 60% 45%;
+  background-position: 20% 25%;
 }
 .all-wods-header h1, h2{
   color: white;
@@ -86,7 +86,8 @@ body{
   background-color: transparent;
 }
 .list .item h2{
-  font-size: 20px;
+  font-size: 25px;
+  color: black;
 }
 .c-hamburger {
 display: block;
@@ -240,7 +241,7 @@ margin-top: 69px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
 }
 .pr-show .right{
   border-right: none;
@@ -248,6 +249,7 @@ margin-top: 69px;
 .white-text h3{
   color: white;
   font-family: 'Quicksand', sans-serif;
+  text-align: center;
 }
 .white-text{
   color: white;

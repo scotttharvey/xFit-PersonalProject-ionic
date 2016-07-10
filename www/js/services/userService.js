@@ -1,5 +1,6 @@
 angular.module("crossfit").service('userService', function($http){
-  this.friendProfile; 
+  
+  this.friendProfile;
 
   this.getCurrentUser = function(){
     return $http.get("http://localhost:3000/api/me").then(function(res){

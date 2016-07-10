@@ -1,6 +1,11 @@
-angular.module('crossfit').controller('homeCtrl', function($scope, $state, userService, homeService, $ionicPopup) {
+angular.module('crossfit').controller('homeCtrl', function($scope, $state, homeService, settingsService, userService, wodService, $ionicModal, $ionicPopup) {
  console.log("Home CTrl");
-
+ $scope.goNav = true;
+ $scope.togNav = function(){
+   $scope.goNav = !$scope.goNav;
+   var toggles = document.getElementsByClassName("c-hamburger")[0];
+(toggles.classList.contains("is-active") === true) ? toggles.classList.remove("is-active") : toggles.classList.add("is-active");
+ }
  $scope.getAllUsers = function() {
    homeService.getAllUsers().then(function(res) {
      $scope.allUsers = res.data;

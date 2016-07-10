@@ -25,7 +25,9 @@
   <h3>PR's</h3>
 </div>
 <div  ng-click='following()' class="pr-show white-text">
-  <h3>Following</h3>
+  {{Users.length}}
+  <h3>Followers </h3>
+
 </div>
 </section>
 <section>
@@ -79,7 +81,7 @@
 
 </section>
 
-<ion-list  ng-hide="followers" ng-repeat="user in Users | filter:search |orderBy:'_id' as filtered_result track by $index"  show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+<ion-list  class="animate-repeat" ng-hide="followers" ng-repeat="user in Users | filter:search |orderBy:'_id' as filtered_result track by $index"  show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
   <ion-item ng-click="goFriend($index)" class="item item-avatar item-thumbnail-left" >
 

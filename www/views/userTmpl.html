@@ -1,5 +1,33 @@
 <section>
-  <nav-bar><nav-bar>
+  <div class="navi" id="navi">
+
+
+    <ul>
+
+
+      <div class="wodText">
+        <li class="top-boxwod" ng-click='togNav()'>
+          <div class="moveTheDamnBurger">
+            <button class="button icon c-hamburger c-hamburger--htx float-left">
+              <span>toggle menu</span>
+            </button>
+          </div>
+          <div class = "stayTheFHere">
+            <h1>Profile</h1>
+          </div>
+
+          <div>
+            <span ng-hide="goNav" ui-sref='settings' class="button icon ion-gear-a settingsMove"></span>
+          </div>
+
+        </li>
+        <li id="wodColor" ng-click="togNav(); changeColor(wodColor)" ng-hide="goNav"><a ui-sref="wod"><h1>Wod</h1></a></li>
+        <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="home"><h1>Home</h1></a></li>
+        <li ng-click="togNav()" ng-hide="goNav"> <a ui-sref="user"><h1>Profile</h1></a></li>
+
+      </div>
+    </ul>
+  </div>
 </section>
 <ion-content class="space">
   <div class="user-top">
@@ -23,7 +51,9 @@
   <h3>PR's</h3>
 </div>
 <div  ng-click='following()' class="pr-show white-text">
+    {{Users.length}}
   <h3>Following</h3>
+
 </div>
 </section>
 <section>
@@ -37,6 +67,7 @@
 <section  ng-hide='prHidden'>
   <ul class="list">
       <li class="item">
+
       <h2>Back Squat - {{currentUser.prs[0].backsquat}}lb </h2>
       {{currentUser.date | date: 'MMM /d /y'}}
       </li>
@@ -74,7 +105,7 @@
       <li class="item">
       <a class="ion-ios-plus-outline"> &nbsp Add PR</a>
       </li>
-      
+
       </li>
   </ul>
 
@@ -101,9 +132,7 @@
 </section>
 
 </ion-item>
-<div class="" ng-show="filtered_result.length == 0">
-No results found
-</div>
+
 </ion-list>
 
 

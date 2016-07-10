@@ -1,4 +1,10 @@
 angular.module('crossfit').controller('userCtrl', function($scope, $state, homeService, settingsService, userService, wodService, $ionicModal, $ionicPopup) {
+  $scope.goNav = true;
+  $scope.togNav = function(){
+    $scope.goNav = !$scope.goNav;
+    var toggles = document.getElementsByClassName("c-hamburger")[0];
+(toggles.classList.contains("is-active") === true) ? toggles.classList.remove("is-active") : toggles.classList.add("is-active");
+  }
     $scope.addNewUser = function(userObj){
       userService.addUser(userObj).then(function(res){
         console.log(res);
@@ -9,15 +15,6 @@ angular.module('crossfit').controller('userCtrl', function($scope, $state, homeS
         }
       })
     },
-
-    $scope.goFriend = function(i){
-      userService.friendProfile = $scope.Users[i];
-      $state.go('friend')
-    }
-    $scope.updatePR = function(obj){
-      userService.editUser(obj);
-    }
-
 
     $scope.getUsers = function(userObj){
       userService.getAllUsers(userObj).then(function(res){
@@ -30,6 +27,7 @@ angular.module('crossfit').controller('userCtrl', function($scope, $state, homeS
     },
     $scope.showUsers = function() {
       homeService.getAllUsers().then(function(res) {
+        console.log(res.data);
         $scope.Users = res.data;
       })
     }
@@ -38,7 +36,6 @@ angular.module('crossfit').controller('userCtrl', function($scope, $state, homeS
     settingsService.getCurrentUser().then(function(res){
       $scope.currentUser = res.data
       $scope.admin = res.data.admin
-      console.log($scope.currentUser);
     })
   $scope.about = function(){
     $scope.prHidden = true;
@@ -58,4 +55,15 @@ angular.module('crossfit').controller('userCtrl', function($scope, $state, homeS
     $scope.prHidden = false;
     $scope.aboutTab = true;
     $scope.followers = true;
+
+    $scope.goFriend = function(i){
+      userService.friendProfile = $scope.Users[i];
+      console.log($state.go('friend'));
+      $state.go('friend')
+    }
+
+    $scope.updatePR = function(obj){
+      userService.editUser(obj);
+    }
+
 })

@@ -1,13 +1,34 @@
 
   <section ng-click='closeWodModal(); closeModal()'>
-    <nav-bar  >
-    </nav-bar>
+    <div class="navi" id="navi">
+
+      <ul>
+        <div class="wodText">
+          <li class="top-boxwod" ng-click='togNav()'>
+            <div class="moveTheDamnBurger">
+              <button class="button icon c-hamburger c-hamburger--htx float-left">
+                <span>toggle menu</span>
+              </button>
+            </div>
+            <div class = "stayTheFHere">
+              <h1>Wod</h1>
+            </div>
+
+            <div>
+              <span ng-hide="goNav" ui-sref='settings' class="button icon ion-gear-a settingsMove"></span>
+            </div>
+
+          </li>
+          <li id="wodColor" ng-click="togNav(); changeColor(wodColor)" ng-hide="goNav"><a ui-sref="wod"><h1>Wod</h1></a></li>
+          <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="home"><h1>Home</h1></a></li>
+          <li ng-click="togNav()" ng-hide="goNav"> <a ui-sref="user"><h1>Profile</h1></a></li>
+
+        </div>
+      </ul>
+    </div>
   </section>
 
 <ion-content class="space" >
-  <div class="all-wods-header">
-    <h1 class="">Wods</h1>
-  </div>
 
   <ion-list  show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
@@ -34,7 +55,7 @@
 
 
 <section ng-if='admin' ng-click="showFooter()">
-  <div class="bar bar-footer bar-balanced" ui-sref="addWod">
+  <div class="bar bar-footer bar-assertive" ui-sref="addWod">
     <div class="title"><a> ADD + <a/></div>
   </div>
 </section>

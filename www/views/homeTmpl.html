@@ -1,24 +1,52 @@
 
 <section>
-  <nav-bar><nav-bar>
+  <div class="navi" id="navi">
+
+
+    <ul>
+
+
+      <div class="wodText">
+        <li class="top-boxwod" ng-click='togNav()'>
+          <div class="moveTheDamnBurger">
+            <button class="button icon c-hamburger c-hamburger--htx float-left">
+              <span>toggle menu</span>
+            </button>
+          </div>
+          <div class = "stayTheFHere">
+            <h1>Home</h1>
+          </div>
+
+          <div>
+            <span ng-hide="goNav" ui-sref='settings' class="button icon ion-gear-a settingsMove"></span>
+          </div>
+
+        </li>
+        <li id="wodColor" ng-click="togNav(); changeColor(wodColor)" ng-hide="goNav"><a ui-sref="wod"><h1>Wod</h1></a></li>
+        <li ng-click="togNav()" ng-hide="goNav"><a ui-sref="home"><h1>Home</h1></a></li>
+        <li ng-click="togNav()" ng-hide="goNav"> <a ui-sref="user"><h1>Profile</h1></a></li>
+
+      </div>
+    </ul>
+  </div>
 </section>
 
   <ion-content  ng-model='admin' class="space">
   <!-- <h2 class="title">Home</h2> -->
   <label class="item item-input">
   <i class="icon ion-search placeholder-icon"></i>
-  <input type="search" placeholder="search user" ng-model="search">
+  <input type="search" placeholder="search user" ng-model="search.name">
 
 </label>
 
-<ion-list ng-if='search' ng-repeat="user in allUsers | filter:search |orderBy:'name' as filtered_result track by $index" show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
+<ion-list ng-if='search.name' ng-repeat="user in allUsers | filter:search |orderBy:'_id' as filtered_result track by $index" show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe"   >
 
-  <ion-item  ng-click="goFriend($index)" class="item item-avatar item-thumbnail-left" >
+  <ion-item ng-click="goFriend($index)" class="item item-avatar item-thumbnail-left" >
 
 <img src="./img/lindsay.png">
 <h1 class="title">{{user.username}}</h1>
 
-  <h2 >{{user.prs[0].backsquat}}lb Backsquat</h2>
+  <h2 >{{user.name}}</h2>
 
 
 <section ng-if"admin">
