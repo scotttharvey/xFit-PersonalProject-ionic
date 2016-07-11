@@ -14,12 +14,12 @@ var boxCtrl = require("./server/controllers/boxCtrl")
 var User = require("./server/models/userSchema.js")
 var Wod = require("./server/models/wod.js")
 var Box = require("./server/models/boxSchema.js")
-var corsOptions = {
-  origin: "http://localhost:8100"
-}
+// var corsOptions = {
+//   origin: "http://localhost:8100"
+// }
 app.use(express.static(__dirname + '/www'));
 app.use(bodyParser.json())
-app.use(cors(corsOptions))
+// app.use(cors(corsOptions))
 
 app.get("/api/user", userCtrl.getAllUsers)
 app.get("/api/user/:id", userCtrl.getUser)
@@ -47,14 +47,14 @@ app.post("/api/box", boxCtrl.addBox)
 app.put("/api/box/:id", boxCtrl.updateBox)
 app.delete("/api/box/:id", boxCtrl.deleteBox)
 
-
+var MONGO_URI = process.env.MONGO_LABS_URI;
 
 mongoose.set('debug', true)
-mongoose.connect("mongodb://localhost/xFit")
+mongoose.connect(MONGO_URI)
 
 
 
-var port = 3000;
+var port = process.env.PORT || 7200;
 app.listen(port, function(){
   console.log("Listening to " + port );
 })
