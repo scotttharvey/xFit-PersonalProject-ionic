@@ -17,7 +17,9 @@
 
       <div class="item item-body">
         <p>
-          <h2 class="h2 subdued">Description</h2> {{wod.description}}
+          <h2 class="h2 subdued ">Description</h2> <div class="body-text">
+{{wod.description}}
+          </div>
         </p>
       </div>
       <div class="item item-body">
@@ -44,7 +46,7 @@
                 <ion-item ng-repeat='stuff in wod.comments track by $index' show-delete="shouldShowDelete" show-reorder="shouldShowReorder" can-swipe="listCanSwipe">
 
                   <h2>{{stuff.user.username}}</h2>
-                  <h3>- {{stuff.comment}}</h3>
+                  <h2>- {{stuff.comment}}</h2>
 
 
 
@@ -55,9 +57,9 @@
             </ion-item>
 
         <div ng-hide='custom' class="item item-input item-floating-label">
-          <span class="input-label subdued" >Post score...</span>
+          <span class="input-label subdued" >Post comment..</span>
 
-          <textarea ng-model="newComment" style="background-color: transparent" placeholder="add score" type="text"></textarea>
+          <textarea ng-model="newComment" style="background-color: transparent" placeholder="add comment" type="text"></textarea>
           <button type="button" ng-click="postComment(currentUser._id, wod._id, newComment)" class="button button-calm">
             Submit
           </button>

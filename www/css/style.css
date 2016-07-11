@@ -1,15 +1,13 @@
 @import url(https://fonts.googleapis.com/css?family=Quicksand);
+@import url(https://fonts.googleapis.com/css?family=Nova+Square);
 
 body{
-  background-image: url("../img/signin.png");
-
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  background-image: url("../img/dumbs.jpg");
 
 }
 
 .ion-content{
   background-image: url("../img/signin.png");
-  /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
   background-color:  transparent;
 
 }
@@ -20,7 +18,22 @@ body{
 }
 .item-complex{
   background-color:  transparent;
+}
+.body-text{
+  white-space: pre-line;
 
+}
+.login{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;;
+}
+.login h1{
+  font-size: 80px;
+  font-family: 'Nova Square';
+  border-bottom: solid black 5px;
 }
 .button icon ion-gear-a{
   float: right;
@@ -82,12 +95,27 @@ body{
    .25px .25px 0 #000;*/
    font-family: 'Quicksand', sans-serif;
 }
+.wodText h2, h3{
+  color: white;
+   /*text-shadow:
+   -.25px -.25px 0 #000,
+   .25px -.25px 0 #000,
+   -.25px .25px 0 #000,
+   .25px .25px 0 #000;*/
+   font-family: 'Quicksand', sans-serif;
+}
+
+
 .wodList .item-content{
   background-color: transparent;
 }
 .list .item h2{
   font-size: 25px;
-  color: black;
+  color: #B7B09D;
+}
+.list .item h3{
+  font-size: 25px;
+  color: #F7EED4;
 }
 .c-hamburger {
 display: block;

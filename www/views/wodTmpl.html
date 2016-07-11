@@ -36,7 +36,7 @@
     <ion-item ng-model="admin"  ng-repeat="wod in allWods | orderBy:'-date'" class="item-thumbnail-left wodList">
       <!-- <img ng-src="{{item.img}}"> -->
       <div ng-click="editWod(wod._id); openWodModal(wod);" class="wodText">
-        <h3 >{{wod.date | date: 'EEEE'}} - {{wod.date | date: 'MMM/ d/ y'}}</h3>
+        <h3>{{wod.date | date: 'EEEE'}} - {{wod.date | date: 'MMM/ d/ y'}}</h3>
         <h1 >{{wod.name}}</h1>
       </div>
 
