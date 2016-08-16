@@ -39,7 +39,7 @@ function createJWT(user) {
    })
 },
     userLogin : function(req, res) {
-    console.log(req);
+
        User.findOne({ username: req.body.username }, 'username password', function(err, user) {
          if (!user) {
            return res.status(401).send({ message: 'Invalid email and/or password' });
@@ -54,7 +54,7 @@ function createJWT(user) {
    },
    userSignUp: function(req, res) {
      console.log("hi")
-       console.log(req.body);
+      //  console.log(req.body);
        User.findOne({ email: req.body.email }, function(err, existingUser) {
          if (existingUser) {
            return res.status(409).send({ message: 'Email is already taken' });
@@ -69,7 +69,7 @@ function createJWT(user) {
            if (err) {
              res.status(500).send({ message: err.message });
            }
-           console.log(result);
+          //  console.log(result);
            res.send({ token: createJWT(result) });
          });
        });
@@ -103,7 +103,7 @@ function createJWT(user) {
        res.status(500).json(err);
      }else {
        resp.wods.push({wod: req.body.postId, time: req.body.addWod});
-       console.log(resp.wods);
+      //  console.log(resp.wods);
        resp.save(function(err, data) {
          if (err){
            res.status(500).send(err);
@@ -117,7 +117,7 @@ function createJWT(user) {
  },
 
     getAllUsers: function(req, res, next) {
-      console.log("Im getting hit");
+      // console.log("Im getting hit");
       User.find({}, function(err, ans) {
         if (err) {
           res.status(500).json(err);

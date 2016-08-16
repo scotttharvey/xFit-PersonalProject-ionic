@@ -6,7 +6,7 @@ var wodSchema = new Schema({
   description: {type: String, required: true},
   warmup: {type: String, required: false},
   rx: {type: String},
-  date: {type: Date, default: Date.now},
+  // date: {type: Date, default: Date.now},
   tips: {type: String},
   comments: [{
     comment: String,

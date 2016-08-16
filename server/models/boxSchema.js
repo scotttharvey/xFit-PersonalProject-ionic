@@ -9,7 +9,7 @@ var boxSchema = new Schema({
   password: {type: String, required: true},
   number: {type: Number, required: false},
   location: {type: String, required: false},
-  date: {type: Date, default: Date.now},
+  // date: {type: Date, default: Date.now},
   about: {type: String, required: false},
   users: [{type: Schema.Types.ObjectId,
       ref: 'User'}]

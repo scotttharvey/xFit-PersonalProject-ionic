@@ -8,7 +8,7 @@ var userSchema = new Schema({
   username: {type: String, required: true},
   password: {type: String, required: true},
   number: {type: Number, required: false},
-  date: {type: Date, default: Date.now},
+  // date: {type: Date, default: Date.now},
   about: {type: String, required: false},
   prs:[{
     backsquat: Number,

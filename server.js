@@ -54,7 +54,7 @@ mongoose.connect("mongodb://localhost/xFit")
 
 
 
-var port = 3000;
+var port = 4000;
 app.listen(port, function(){
   console.log("Listening to " + port );
 })

@@ -2,7 +2,8 @@
 @import url(https://fonts.googleapis.com/css?family=Nova+Square);
 
 body{
-  background-image: url("../img/dumbs.jpg");
+  background-image: url("../img/wrk.jpg");
+  opacity: 0.9;
 
 }
 
@@ -52,6 +53,10 @@ body{
   top: 10px;
   left: 35%;
 
+}
+.input-label{
+  color: black;
+  font-size: 18px;
 }
 .all-wods-header{
   display: flex;
@@ -224,6 +229,7 @@ transition-delay: 0s, 0.3s;
 
 .h2{
   font-size: 30px;
+  color: white;
 }
 .space{
 margin-top: 69px;
